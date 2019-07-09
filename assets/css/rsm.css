@@ -1,0 +1,355 @@
+/*#vpc-ajax-loader-container.vpc-ajax-loader { display: none !important; }
+#vpc-ajax-container {
+    padding: 50px;
+    margin-left: -6px;
+    margin-right: -6px;
+}
+#vpc-ajax-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}*/
+.vpc-ajax-loader img {display: none;}
+/* #vpc-header */
+#vpc-header {
+    margin-top: 20px;
+}
+#vpc-header:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+#vpc-header header {
+    margin-bottom: 0em!important;
+    padding-left: 30px;
+    float: left;
+}
+#vpc-header header h1 {
+    font-family: 'Lato',sans-serif;
+    color: #b2b3b7;
+    text-transform: uppercase;
+    font-size: 53px;
+    font-weight: 300;
+}
+
+#vpc-header .vpc-logo {
+	float: right;
+	display: block;
+    height: 50px;
+    padding-top: 5px;
+}
+
+#vpc-container {
+    margin-left: -6px;
+    margin-right: -6px;
+}
+#vpc-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* #vpc-container > #vpc-components */
+#vpc-components {
+    position: relative;
+    width: 36%;
+    z-index: 99;
+    float: left;
+}
+#vpc-components:before {
+    content: "";
+    width: 10px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    box-shadow: inset 11px 0px 18px -14px grey, 9px 0px 18px -12px grey;
+    border-left: 1px solid #a8a9ad!important;
+    left: 30px;
+}
+
+#vpc-components .vpc-component {
+    min-height: 175px;
+    width: 50%;
+    border: 0px solid #f1f4f9!important;
+}
+
+#vpc-components .vpc-component:first-of-type {
+    /*border: 0px solid #f1f4f9!important;*/
+}
+
+.vpc-component .vpc-tab-header {
+    height: 100%;
+    display: block;
+    width: 20px;
+    float: left;
+    margin-top: -5px;
+    position: absolute;
+}
+
+.vpc-component .vpc-tab-header h6{
+    color: #6e6f71;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(-90deg);
+    width: 59px;
+    font-size: 12px;
+    margin-bottom: 0px;
+    margin-left: -19px;
+    text-align: center;
+    margin-top: 75px;
+    position: absolute; 
+}
+
+.vpc-component .vpc-component-header {
+    display: none!important;
+}
+
+.vpc-component .vpc-options {
+    margin-top: 0px!important;
+    background: transparent!important;
+}
+
+.vpc-options .vpc-group {
+    border-top: 0px solid red!important;
+    padding: 15px;
+    /* text-align: center; */
+}
+
+.vpc-group[style="display: none;"] {
+    display: none!important;
+}
+
+.vpc-options .vpc-group-name {
+    display: none!important;
+}
+
+.vpc-options label.custom {
+    opacity: 0.4;
+    overflow: hidden;
+    margin: 3px!important;
+    /*border: 1px solid #6e6f71;*/
+    border:  none;
+
+}
+.vpc-options label.custom:before {
+    width: 100%;
+    height: 100%;
+    background-position: 0px 0px;
+}
+
+.vpc-options input:checked + label.custom {
+    /*border: 1px solid #666;*/
+    opacity: 1;
+}
+/* remove check box from selected pattern */
+.vpc-options input:checked + label.custom:before {
+    content: "" !important;
+}
+
+.vpc-component:not(.Pattern) {
+    position: relative;
+    height: 100%;
+    min-height: 175px;
+}
+
+.vpc-component:not(.Pattern) div.vpc-options {
+    width: 100%!important;
+    height: fit-content;
+    overflow: hidden;
+    margin: auto!important;
+    position: absolute;
+    top: 0;
+    padding-left: 35px!important;
+    padding-right: 6px!important;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+
+/* #vpc-container > #vpc-components > .BaseTab */
+    .vpc-component.BaseTab div.vpc-options {
+        display: block;
+    }
+
+    .vpc-component.BaseTab .vpc-tab-header {
+        background: #f1f1f1;
+    }
+
+    #vpc-components .vpc-component.BaseTab .vpc-options label.custom,
+    #vpc-components .vpc-component.Shade .vpc-options label.custom {
+        width: 60px;
+        height: 60px;
+    }
+    #vpc-components .vpc-component.BaseTab .vpc-options label.custom:before {
+        background-size: 160% 160%;
+        background-position: center -36px;
+    }
+    #vpc-components .vpc-component.Shade .vpc-options label.custom:before {
+        background-size: 160% 160%;
+        background-position: center 0;
+    }
+    #vpc-components .vpc-component.Color .vpc-options label.custom {
+        width: 25px;
+        height: 25px;
+    }
+
+/* #vpc-container > #vpc-components > .Pattern */
+    #vpc-components .vpc-component.Pattern {
+        float: right;
+        padding-top: 0px;
+        margin-top: -351px;
+        width: 50%;
+        box-shadow: inset 11px 0px 18px -14px grey, 9px 0px 18px -12px grey;
+        display: none;
+    }
+    .vpc-component.Pattern .vpc-group {
+        height: 520px;
+        overflow: hidden;
+        display: block;
+    }
+    .Pattern .vpc-options {
+        margin-top: 0px!important;
+        width: 100%!important;
+    }
+    .Pattern .vpc-tab-header {
+        display: none;
+    }
+
+    #vpc-components .vpc-component.Pattern .vpc-single-option-wrap {
+        width: 100%;
+    }
+
+    #vpc-components .vpc-component.Pattern .vpc-options label.custom {
+        width: 100%;
+        height: auto;
+        max-height: 168px; 
+        min-height: 168px;
+        margin: 0px;
+        margin-bottom: 5px;
+        overflow: hidden;
+        border: 0px!important;
+    }
+
+    #vpc-components .vpc-component.Pattern .vpc-options label.custom:before {
+        width: 100%!important;
+        height: 161px!important;
+        background-position: top!important;
+        margin-top: -15%;
+        -webkit-transition: transform 0.5s ease-in-out, margin-top 0.4s ease-in-out;
+        -moz-transition: transform 0.5s ease-in-out, margin-top 0.4s ease-in-out;
+        -o-transition: transform 0.5s ease-in-out, margin-top 0.4s ease-in-out;
+        transition: transform 0.5s ease-in-out, margin-top 0.4s ease-in-out;
+    }
+
+    #vpc-components .vpc-component.Pattern .vpc-options input[type="radio"]:checked+label.custom:before,
+    #vpc-components .vpc-component.Pattern .vpc-options input[type="radio"]:not(:checked)+ label.custom:hover:before {
+        -webkit-transform: scale(1.7);
+        transform: scale(1.7);
+        margin-top: -25%;   
+    } 
+
+/* vpc-preview-wrap */
+#vpc-preview-wrap {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 64%;
+    height: 100%;
+    padding-top: 50px;
+}
+
+#vpc-price-container {
+    width: 40%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    font-size: 10px;
+    color: #6e6f71;
+    font-weight: normal;
+}
+
+.vpc-action-buttons {
+    display: none;
+}
+
+#vpc-preview {  
+    max-height: 525px;
+    overflow: hidden;
+    border: 0px solid red!important;
+    width: 60%;
+}
+
+#vpc-preview img {
+    max-width: 525px!important;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+    width: 100%;
+}
+
+#vpc-preview:hover {
+    z-index: 99999!important;
+    overflow: hidden;   
+    max-height: 525px;
+}
+
+#vpc-preview:hover img {
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);  
+    padding-top: 17%;
+}
+
+/* remove boder from preview pane*/
+.vpc-cart-config-image, .saved-config-preview {
+    border: 0px solid red!important;
+}
+
+.info-row{
+    display:flex;
+}
+.info-row > div {
+    padding-bottom: 12px;
+}
+.info-label {
+    width: 50px;
+    border-right:1px solid #6e6f71;
+    padding-right: 5px;
+}
+.info-data {
+    margin-left: 10px;
+}
+
+.vpc-action-block {
+    text-align: left;
+    padding-left: 60px;
+    margin-top: 16px;
+    font-size: 16px;
+}
+
+.vpc-action-row {
+    display: flex;
+    margin-top: 5px
+}
+.vpc-action-row button{
+    background: none !important;
+    border: none;
+    padding: 0;
+    color: #6e6f71;
+    font-size: 16px;
+}
+
+/* .vpc-action-buttons */
+.vpc-action-buttons {
+    margin-top: 50px;
+    padding-left: 30px;
+}
+body.fl-theme-builder-footer #vpc-qty-container input[type=button], body.fl-theme-builder-footer .vpc-action-buttons button {
+    background: #b2b3b7!important;
+}
+body.fl-theme-builder-footer #vpc-qty-container input[type="button"] {
+    background: #b2b3b7!important;
+}
+.sleeping { pointer-events: none; }

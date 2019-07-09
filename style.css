@@ -1,0 +1,126 @@
+/**
+Theme Name: WIGHT Design Group
+Author: Intelligent Web Solutions, Inc.
+Author URI: https://intelligentweb.co
+Description:  
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wight-design-group
+Template: astra
+**/
+
+.btn
+.button,
+a.uabb-button,
+.uabb-creative-button-wrap a {
+	padding: 15px 40px !important;
+	height: 55px;
+}
+
+.btn-special {
+	background-color: #d6bd00;
+}
+.footer-icon {
+	margin-right: 20px;
+}
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+.centered {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.wpexperts-page .main-header-bar-wrap,
+.wpexperts-page footer {
+	display: none;
+}
+
+.wpexperts-page .ast-container {
+	margin-top: 5em;
+}
+
+.wpexperts-page .ast-container {
+    max-width: 1240px;
+    display: block;
+    margin: 0 auto 0 10% !important;
+	}
+
+#component-5ccc6fbdbe07b.vpc-component.BaseTab,
+#component-5cc1c25be2216.vpc-component.Color,
+#component-5cc1d4d862dfa.vpc-component.Shade {	
+	border-right: 0.5px solid rgba(0,0,0,0.5) !important;
+}
+
+
+
+#vpc-components .vpc-component.Pattern {
+	box-shadow: none !important;
+	border-right: 0.5px solid rgba(0,0,0,0.5) !important;
+}
+
+#vpc-components .vpc-component:first-of-type {
+	border-right: 0.5px solid rgba(0,0,0,0.5) !important;
+}
+
+#vpc-preview {
+	margin-top: 5%;
+}
+
+.info-row > div {
+	padding-bottom: 5px !important;
+}
+
+.info-label {
+	width: 70px !important;
+	padding-top: 3px !important;
+}
+.info-row {
+	font-size: 11px;
+}
+
+.vpc-action-row button {
+	color: #84cece !important;
+}
+
+.vpc-price-label {
+	text-transform: uppercase !important;
+}
+
+.vpc-action-block { 
+	padding-left: 80px !important;
+}
+
+.info-data {
+	font-weight: 700;
+}
+
+.info-data:after {
+	content: ">" !important;
+	font-size: 14px;
+	padding-left: 5px;
+}
+
+
+@media screen and (max-width: 960px) {
+	#vpc-components .vpc-component,
+	#vpc-price-container,
+	#vpc-preview-wrap {
+		
+		width: 100% !important;
+	}
+}
