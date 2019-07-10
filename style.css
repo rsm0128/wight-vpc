@@ -50,15 +50,15 @@ img {
 	display: none;
 }
 
-.wpexperts-page .ast-container {
+/*.wpexperts-page .ast-container {
 	margin-top: 5em;
-}
+}*/
 
-.wpexperts-page .ast-container {
+/*.wpexperts-page .ast-container {
     max-width: 1240px;
     display: block;
     margin: 0 auto 0 10% !important;
-	}
+	}*/
 
 #component-5ccc6fbdbe07b.vpc-component.BaseTab,
 #component-5cc1c25be2216.vpc-component.Color,
@@ -81,40 +81,17 @@ img {
 	margin-top: 5%;
 }
 
-.info-row > div {
-	padding-bottom: 5px !important;
-}
-
-.info-label {
-	width: 70px !important;
-	padding-top: 3px !important;
-}
-.info-row {
-	font-size: 11px;
-}
-
 .vpc-action-row button {
 	color: #84cece !important;
 }
 
 .vpc-price-label {
-	text-transform: uppercase !important;
+	text-transform: uppercase;
 }
 
 .vpc-action-block { 
 	padding-left: 80px !important;
 }
-
-.info-data {
-	font-weight: 700;
-}
-
-.info-data:after {
-	content: ">" !important;
-	font-size: 14px;
-	padding-left: 5px;
-}
-
 
 @media screen and (max-width: 960px) {
 	#vpc-components .vpc-component,
