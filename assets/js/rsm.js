@@ -12,26 +12,39 @@ jQuery(document).ready(function() {
 		jQuery(document).on('click', 'label.custom', function(){
 			rsmUpdateProductInfo();
 		});
+
+		jQuery(document).on('click', '.info-row', function(){
+			jQuery(this).toggleClass('active');
+		});
 	}
 });
 
 function rsmUpdateProductInfo() {
-	var chked_option = '.vpc-options input:checked + label.custom';
-	var base = removeParenthesis(jQuery('.BaseTab').find(chked_option).data('o-title'));
-	var color = removeParenthesis(jQuery('.Color').find(chked_option).data('o-title'));
-	var pattern = removeParenthesis(jQuery('.Pattern').find(chked_option).data('o-title'));
-	var shade = removeParenthesis(jQuery('.Shade').find(chked_option).data('o-title'));
+	var base = getOptionAttribute('.BaseTab');
+	var color = getOptionAttribute('.Color');
+	var pattern = getOptionAttribute('.Pattern');
+	var shade = getOptionAttribute('.Shade');
 	var spec = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
-	var html = '<div class="vpc-info-block">' + 
-			'<div class="info-row"><div class="info-label">BASE</div><div class="info-data">' + base + '</div></div>' +
-			'<div class="info-row"><div class="info-label">COVER</div><div class="info-data">' + color + ' ' + pattern + '</div></div>' +
-			'<div class="info-row"><div class="info-label">SHADE</div><div class="info-data">' + shade + '</div></div>' +
-			'<div class="info-row"><div class="info-label">SPECS</div><div class="info-data">' + spec + '</div></div>' +
-		'</div>';
+	var html = '<div class="vpc-info-block">' +
+	'<div class="info-row"><div class="info-label">BASE</div><div class="info-data"><div class="info-name">' + base.name + '</div><div class="info-desc">' + base.description +'</div></div></div>' +
+		'<div class="info-row"><div class="info-label">COVER</div><div class="info-data"><div class="info-name">' + color.name + ' ' + pattern.name + '</div><div class="info-desc">' + pattern.description +'</div></div></div>' +
+		'<div class="info-row"><div class="info-label">SHADE</div><div class="info-data"><div class="info-name">' + shade.name + '</div><div class="info-desc">' + shade.description +'</div></div></div>' +
+		'<div class="info-row"><div class="info-label">SPECS</div><div class="info-data"><a href="' + rsmJson.siteurl + '?' + 'action=download-spec-pdf&base=' + base.name + '&color=' + color.name + '&pattern=' + pattern.name + '&shade=' + shade.name + '" target="_blank">Download Spec</a></div></div>' +
+	'</div>';
 
 	jQuery('.vpc-info-block').remove();
 	jQuery('#vpc-price-container').prepend(html);
+}
+
+function getOptionAttribute(str_selector) {
+	str_selector += ' .vpc-options input:checked';
+	var obj = jQuery(str_selector).parent().next('.rsm-vpc-info');
+	return {
+		name : obj.data('name'),
+		price : obj.data('price'),
+		description : obj.html(),
+	};
 }
 
 function rsmInitCongurator() {
