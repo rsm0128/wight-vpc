@@ -2,7 +2,7 @@
 Theme Name: WIGHT Design Group
 Author: Intelligent Web Solutions, Inc.
 Author URI: https://intelligentweb.co
-Description:  
+Description:
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -62,14 +62,7 @@ img {
 
 #component-5ccc6fbdbe07b.vpc-component.BaseTab,
 #component-5cc1c25be2216.vpc-component.Color,
-#component-5cc1d4d862dfa.vpc-component.Shade {	
-	border-right: 0.5px solid rgba(0,0,0,0.5) !important;
-}
-
-
-
-#vpc-components .vpc-component.Pattern {
-	box-shadow: none !important;
+#component-5cc1d4d862dfa.vpc-component.Shade {
 	border-right: 0.5px solid rgba(0,0,0,0.5) !important;
 }
 
@@ -89,7 +82,7 @@ img {
 	text-transform: uppercase;
 }
 
-.vpc-action-block { 
+.vpc-action-block {
 	padding-left: 80px !important;
 }
 
@@ -97,7 +90,7 @@ img {
 	#vpc-components .vpc-component,
 	#vpc-price-container,
 	#vpc-preview-wrap {
-		
+
 		width: 100% !important;
 	}
 }
