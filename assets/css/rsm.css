@@ -68,7 +68,7 @@
 }
 
 /* #vpc-container > #vpc-components */
-#vpc-components:before {
+#vpc-components:before, .vpc-component:after{
     content: "";
     width: 10px;
     height: 100%;
@@ -76,7 +76,15 @@
     position: absolute;
     box-shadow: inset 11px 0px 18px -14px grey, 9px 0px 18px -12px grey;
     border-left: 1px solid #a8a9ad!important;
+}
+
+#vpc-components:before {
     left: 30px;
+}
+
+.vpc-component:after {
+    right: -10px;
+    top: 0px;
 }
 
 #vpc-components .vpc-component {
@@ -84,7 +92,7 @@
     display: flex;
     min-height: 175px;
     width: 50%;
-    border: 0px solid #f1f4f9!important;
+    border-width: 0px!important;
 }
 
 .vpc-component .vpc-tab-header {
@@ -114,14 +122,13 @@
 }
 
 .vpc-component .vpc-options {
-    margin-top: 0px!important;
+    /* margin-top: 0px!important; */
     background: transparent!important;
 }
 
 .vpc-options .vpc-group {
     border-top: 0px solid red!important;
     padding: 15px;
-    /* text-align: center; */
 }
 
 .vpc-group[style="display: none;"] {
@@ -162,23 +169,15 @@
 }
 
 .vpc-component:not(.Pattern) div.vpc-options {
-    width: 100%!important;
-    height: fit-content;
-    overflow: hidden;
-    margin: auto!important;
-    position: absolute;
-    top: 0;
-    padding-left: 35px!important;
-    padding-right: 6px!important;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    margin: auto 5px auto 15px;
+}
+
+.vpc-component:not(.Pattern) div.vpc-options .vpc-group {
+    display: table-cell;
+    vertical-align:middle;
 }
 
 /* #vpc-container > #vpc-components > .BaseType */
-    .vpc-component.BaseType div.vpc-options {
-        display: block;
-    }
 
     #vpc-components .vpc-component.BaseType .vpc-options label.custom,
     #vpc-components .vpc-component.ShadeType .vpc-options label.custom {
@@ -204,9 +203,12 @@
         top: 0;
         right: 0;
         height: 100%;
-        box-shadow: inset 11px 0px 18px -14px grey, 9px 0px 18px -12px grey;
         display: none;
     }
+    /* #vpc-components .vpc-component.BaseTab {
+        display: block;
+    } */
+
     .vpc-component.Pattern .vpc-group {
         height: 520px;
         overflow: hidden;

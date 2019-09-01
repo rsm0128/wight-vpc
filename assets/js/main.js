@@ -139,4 +139,5 @@ function rsmInitCongurator() {
 	jQuery('#vpc-save-btn').text('SAVE').appendTo('.vpc-action-row');
 	jQuery('#vpc-add-to-cart').text('BUY').appendTo('.vpc-action-row');
 	rsmUpdateProductInfo();
+	jQuery('.vpc-component.BaseType .vpc-options label').click();
 }
