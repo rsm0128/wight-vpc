@@ -12,6 +12,7 @@
  * Define Constants
  */
 define( 'CHILD_THEME_WIGHT_DESIGN_GROUP_VERSION', '1.0.0' );
+define( 'RSM_BUILDER_PAGE_URL', 'https://siteview.app/projects/wight/sample-page/configure/317/' );
 
 /**
  * Enqueue styles
@@ -66,3 +67,12 @@ function rsm_template_redirect() {
     }
 }
 add_action( 'template_redirect', 'rsm_template_redirect' );
+
+add_action( 'woocommerce_before_cart_table', 'rsm_woo_add_continue_shopping_button_to_cart' );
+function rsm_woo_add_continue_shopping_button_to_cart() {
+ $shop_page_url = empty(RSM_BUILDER_PAGE_URL) ? get_permalink( wc_get_page_id( 'shop' ) ) : RSM_BUILDER_PAGE_URL;
+
+ echo '<div class="woocommerce-message">';
+ echo ' <a href="'.$shop_page_url.'" class="button">Continue Shopping →</a> Would you like some more goods?';
+ echo '</div>';
+}

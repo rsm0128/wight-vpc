@@ -162,17 +162,26 @@
     content: "" !important;
 }
 
-.vpc-component:not(.Pattern, .Shade, .BaseTab) {
+.vpc-component.BaseType,
+.vpc-component.Color,
+.vpc-component.ShadeType
+ {
     position: relative;
     /* height: 100%; */
     min-height: 175px;
 }
 
-.vpc-component:not(.Pattern) div.vpc-options {
+.vpc-component.BaseType div.vpc-options,
+.vpc-component.Color div.vpc-options,
+.vpc-component.ShadeType div.vpc-options
+{
     margin: auto 5px auto 15px;
 }
 
-.vpc-component:not(.Pattern) div.vpc-options .vpc-group {
+.vpc-component.BaseType div.vpc-options .vpc-group,
+.vpc-component.Color div.vpc-options .vpc-group,
+.vpc-component.ShadeType div.vpc-options .vpc-group
+{
     display: table-cell;
     vertical-align:middle;
 }
@@ -198,7 +207,9 @@
     }
 
 /* #vpc-container > #vpc-components > .Pattern */
-    #vpc-components .vpc-component.Pattern, #vpc-components .vpc-component.BaseTab, #vpc-components .vpc-component.Shade {
+    #vpc-components .vpc-component.BaseTab,
+    #vpc-components .vpc-component.Pattern,
+    #vpc-components .vpc-component.Shade {
         position: absolute;
         top: 0;
         right: 0;
@@ -209,7 +220,9 @@
         display: block;
     } */
 
-    .vpc-component.Pattern .vpc-group {
+    .vpc-component.BaseTab .vpc-group,
+    .vpc-component.Pattern .vpc-group,
+    .vpc-component.Shade .vpc-group {
         height: 520px;
         overflow: hidden;
         display: block;
@@ -222,22 +235,28 @@
         display: none;
     }
 
-    #vpc-components .vpc-component.Pattern .vpc-single-option-wrap {
+    #vpc-components .vpc-component.BaseTab .vpc-single-option-wrap,
+    #vpc-components .vpc-component.Pattern .vpc-single-option-wrap,
+    #vpc-components .vpc-component.Shade .vpc-single-option-wrap {
         width: 100%;
     }
 
-    #vpc-components .vpc-component.Pattern .vpc-options label.custom {
+    #vpc-components .vpc-component.BaseTab .vpc-options label.custom,
+    #vpc-components .vpc-component.Pattern .vpc-options label.custom,
+    #vpc-components .vpc-component.Shade .vpc-options label.custom
+    {
         width: 160px;
         height: 160px;
-        /* max-height: 168px;
-        min-height: 168px; */
         margin: 0px;
         margin-bottom: 5px;
         overflow: hidden;
         border: 0px!important;
     }
 
-    #vpc-components .vpc-component.Pattern .vpc-options label.custom:before {
+    #vpc-components .vpc-component.BaseTab .vpc-options label.custom:before,
+    #vpc-components .vpc-component.Pattern .vpc-options label.custom:before,
+    #vpc-components .vpc-component.Shade .vpc-options label.custom:before
+    {
         width: 128px!important;
         height: 128px!important;
         margin-top: 16px;
@@ -248,10 +267,22 @@
         transition: transform 0.5s ease-in-out, margin-top 0.4s ease-in-out;
     }
 
-    #vpc-components .vpc-component.Pattern .vpc-options input[type="radio"]:checked+label.custom:before {
-        transform-origin: center center;
+    #vpc-components .vpc-component.BaseTab .vpc-options input[type="radio"]:checked+label.custom:before,
+    #vpc-components .vpc-component.Pattern .vpc-options input[type="radio"]:checked+label.custom:before,
+    #vpc-components .vpc-component.Shade .vpc-options input[type="radio"]:checked+label.custom:before
+    {
         -webkit-transform: scale(1.6);
         transform: scale(1.6);
+    }
+
+    #vpc-components .vpc-component.BaseTab .vpc-options input[type="radio"]:checked+label.custom:before {
+        transform-origin: center 120px;
+    }
+    #vpc-components .vpc-component.Pattern .vpc-options input[type="radio"]:checked+label.custom:before {
+        transform-origin: center center;
+    }
+    #vpc-components .vpc-component.Shade .vpc-options input[type="radio"]:checked+label.custom:before {
+        transform-origin: center 30px;
     }
 
 /* vpc-preview-wrap */

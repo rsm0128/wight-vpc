@@ -122,22 +122,18 @@ img {
     margin: 5px;
 }
 
-#cboption-5cc33f458e97f,
+/* #cboption-5cc33f458e97f,
 #cboption-5cc33f4547b6f,
 #cboption-5cc33f454994e,
 #cboption-5ccc6fbd6b526 {
 	width: 125px;
 	height:125px
-}
-
-
-
+} */
 
 @media screen and (max-width: 960px) {
 	#vpc-components .vpc-component,
 	#vpc-price-container,
 	#vpc-preview-wrap {
-
 		width: 100% !important;
 	}
 }
