@@ -125,11 +125,19 @@ function rsmUpdateProductInfo() {
 function getOptionAttribute(str_selector) {
 	str_selector += ' .vpc-options input:checked';
 	var obj = jQuery(str_selector).parent().next('.rsm-vpc-info');
-	return {
-		name: obj.data('name'),
-		price: obj.data('price'),
-		description: obj.html(),
-	};
+	if (obj.length == 0) {
+		return {
+			name: '',
+			price: '',
+			description: '',
+		};
+	} else {
+		return {
+			name: obj.data('name'),
+			price: obj.data('price'),
+			description: obj.html(),
+		};
+	}
 }
 
 function rsmInitCongurator() {
