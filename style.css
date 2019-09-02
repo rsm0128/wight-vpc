@@ -70,30 +70,6 @@ img {
 	padding-left: 80px !important;
 }
 
-#vpc-components:before {
-    content: "";
-    width: 10px;
-    height: 100%;
-    display: block;
-    position: absolute;
-    box-shadow: inset 9px 0px 15px -10px rgba(0,0,0,0.5), 9px 0px 10px -10px rgba(0,0,0,0.5) !important;
-    border-left: 1px solid #ccc !important;
-    left: 30px;
-}
-
-.vpc-options label.custom {
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-    font-size: 13px;
-    text-align: center;
-    vertical-align: top;
-    width: 125px;
-    height: 125px;
-    box-sizing: content-box;
-    margin: 5px;
-}
-
 @media screen and (max-width: 960px) {
 	#vpc-components .vpc-component,
 	#vpc-price-container,

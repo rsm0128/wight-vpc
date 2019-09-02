@@ -75,12 +75,27 @@ jQuery(document).ready(function() {
 		}
 	});
 
+	jQuery('body').on('mousemove', '#vpc-preview', function(e){
+		var objLeft = jQuery(this).offset().left;
+		var objTop = jQuery(this).offset().top;
+
+		// var objCenterX = objLeft + jQuery(this).width() / 2;
+		// var objCenterY = objTop + jQuery(this).height() / 2;
+		var xPosSTR = (event.pageX - objLeft) + 'px';
+		var yPosSTR = (event.pageY - objTop) + 'px';
+		jQuery('#vpc-preview:hover img').css({
+			'transform-origin': xPosSTR + ' ' + yPosSTR + ' 0px',
+			'-webkit-transform-origin': xPosSTR + ' ' + yPosSTR + ' 0px'
+		});
+	});
+
 	// scroll action to pattern
 	jQuery( "body" ).on( "click", '.Pattern .vpc-group .vpc-single-option-wrap label', function(){
 		//var curr_scroll = jQuery(this).parent().position().top;
 		var el_index = jQuery(this).closest('.vpc-group').find('label').index(jQuery(this));
 		if(el_index !== 1){
-			var el_height =  jQuery(this).parent().height();
+			// var el_height =  jQuery(this).parent().height();
+			var el_height = 100;
 			var curr_scroll = el_height * (el_index - 1);
 
 			jQuery(this).parents('.vpc-group').animate({ scrollTop: curr_scroll }, 600 );

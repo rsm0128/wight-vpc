@@ -74,8 +74,10 @@
     height: 100%;
     display: block;
     position: absolute;
-    box-shadow: inset 11px 0px 18px -14px grey, 9px 0px 18px -12px grey;
-    border-left: 1px solid #a8a9ad!important;
+    box-shadow: inset 9px 0px 15px -10px rgba(0,0,0,0.5), 9px 0px 10px -10px rgba(0,0,0,0.5) !important;
+    border-left: 1px solid #ccc !important;
+    /* box-shadow: inset 11px 0px 18px -14px grey, 9px 0px 18px -12px grey;
+    border-left: 1px solid #a8a9ad!important; */
 }
 
 #vpc-components:before {
@@ -90,7 +92,7 @@
 #vpc-components .vpc-component {
     position: relative;
     display: flex;
-    min-height: 175px;
+    min-height: 140px;
     width: 50%;
     border-width: 0px!important;
 }
@@ -111,7 +113,7 @@
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(-90deg);
-    width: 170px;
+    width: 140px;
     height: 100%;
     font-size: 12px;
     text-align: center;
@@ -142,7 +144,7 @@
 .vpc-options label.custom {
     opacity: 0.4;
     overflow: hidden;
-    margin: 5px!important;
+    margin: 10px 5px !important;
     /*border: 1px solid #6e6f71;*/
     border:  none;
 
@@ -223,7 +225,7 @@
     .vpc-component.BaseTab .vpc-group,
     .vpc-component.Pattern .vpc-group,
     .vpc-component.Shade .vpc-group {
-        height: 520px;
+        height: 420px;
         overflow: hidden;
         display: block;
     }
@@ -246,43 +248,58 @@
     #vpc-components .vpc-component.Shade .vpc-options label.custom
     {
         width: 160px;
-        height: 160px;
+        height: 80px;
         margin: 0px;
-        margin-bottom: 5px;
+        margin-bottom: 0px;
         overflow: hidden;
         border: 0px!important;
+        -webkit-transition: height 0.5s ease-in-out;
+        -moz-transition: height 0.5s ease-in-out;
+        -o-transition: height 0.5s ease-in-out;
+        transition: height 0.5s ease-in-out;
+    }
+
+    #vpc-components .vpc-component.BaseTab .vpc-options input[type="radio"]:checked+label.custom,
+    #vpc-components .vpc-component.Pattern .vpc-options input[type="radio"]:checked+label.custom {
+        height: 160px;
+    }
+    #vpc-components .vpc-component.Shade .vpc-options input[type="radio"]:checked+label.custom {
+        height: 140px;
     }
 
     #vpc-components .vpc-component.BaseTab .vpc-options label.custom:before,
     #vpc-components .vpc-component.Pattern .vpc-options label.custom:before,
     #vpc-components .vpc-component.Shade .vpc-options label.custom:before
     {
-        width: 115px!important;
-        height: 115px!important;
-        margin-top: 16px;
-        background-position: top!important;
-        -webkit-transition: transform 0.5s ease-in-out, margin-top 0.4s ease-in-out;
-        -moz-transition: transform 0.5s ease-in-out, margin-top 0.4s ease-in-out;
-        -o-transition: transform 0.5s ease-in-out, margin-top 0.4s ease-in-out;
-        transition: transform 0.5s ease-in-out, margin-top 0.4s ease-in-out;
+        -webkit-transition: transform 0.5s ease-in-out;
+        -moz-transition: transform 0.5s ease-in-out;
+        -o-transition: transform 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
+    }
+
+
+    #vpc-components .vpc-component.BaseTab .vpc-options label.custom:before {
+        transform-origin: center 0px;
+        width: 80px!important;
+        height: 80px!important;
+    }
+    #vpc-components .vpc-component.Pattern .vpc-options label.custom:before {
+        transform-origin: center 0px;
+        width: 80px!important;
+        height: 80px!important;
+    }
+    #vpc-components .vpc-component.Shade .vpc-options label.custom:before {
+        transform-origin: center 0px;
+        width: 120px !important;
+        height: 120px !important;
     }
 
     #vpc-components .vpc-component.BaseTab .vpc-options input[type="radio"]:checked+label.custom:before,
     #vpc-components .vpc-component.Pattern .vpc-options input[type="radio"]:checked+label.custom:before,
     #vpc-components .vpc-component.Shade .vpc-options input[type="radio"]:checked+label.custom:before
     {
-        -webkit-transform: scale(1.6);
-        transform: scale(1.6);
-    }
-
-    #vpc-components .vpc-component.BaseTab .vpc-options input[type="radio"]:checked+label.custom:before {
-        transform-origin: center 120px;
-    }
-    #vpc-components .vpc-component.Pattern .vpc-options input[type="radio"]:checked+label.custom:before {
-        transform-origin: center center;
-    }
-    #vpc-components .vpc-component.Shade .vpc-options input[type="radio"]:checked+label.custom:before {
-        transform-origin: center 30px;
+        -webkit-transform: scale(2.0);
+        transform: scale(2.0);
     }
 
 /* vpc-preview-wrap */
@@ -303,29 +320,24 @@
 }
 
 #vpc-preview {
-    max-height: 525px;
+    max-height: 425px;
     overflow: hidden;
     border: 0px solid red!important;
     width: 60%;
+    z-index: 99999!important;
 }
 
 #vpc-preview img {
-    max-width: 525px!important;
+    max-width: 425px!important;
     -webkit-transition: 0.3s ease;
     transition: 0.3s ease;
     width: 100%;
 }
 
-#vpc-preview:hover {
-    z-index: 99999!important;
-    overflow: hidden;
-    max-height: 525px;
-}
-
 #vpc-preview:hover img {
-    -webkit-transform: scale(1.4);
-    transform: scale(1.4);
-    padding-top: 17%;
+    -webkit-transform: scale(3.0);
+    transform: scale(3.0);
+    /* padding-top: 17%; */
 }
 
 /* remove boder from preview pane*/
