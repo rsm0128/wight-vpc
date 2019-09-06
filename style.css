@@ -74,6 +74,57 @@ img {
 	max-width: 350px;
 }
 
+.vpc-component.BaseTab .vpc-group, .vpc-component.Pattern .vpc-group, .vpc-component.Shade .vpc-group {
+	margin-left: 12px !important;
+}
+
+#vpc-components:before, .vpc-component:after {
+	border: none !important;
+}
+
+.vpc-component .vpc-tab-header h6 {
+	
+}
+
+#cboption-5cd94db92db8b,
+#cboption-5ccdaf6b31b03,
+#cboption-5cd94da1ea7a8,
+#cboption-5cd94dbb0907d,
+#cboption-5cd94dbd1ce33,
+#cboption-5cd94dbe019c8 {
+	border: 1px solid rgba(0,0,0,0.7) !important;
+}
+
+#vpc-components .vpc-component.Shade .vpc-single-option-wrap {
+    
+    margin: -20px auto !important;
+}
+
+.vpc-tab-header.BaseType.label-active {
+	background: #ececec !important;
+}
+
+
+.vpc-component .vpc-tab-header h6 {
+   /* margin-left: -54px !important;
+    height: 20px !important;
+    margin-top: 45px !important;*/
+	margin-left: 7px !important;
+}
+
+
+
+.vpc-tab-header {
+	background: none;
+	/*width: 30px !important;*/
+}
+
+.vpc-header-separator {
+	display: none !important;
+}
+
+
+
 @media screen and (max-width: 960px) {
 	#vpc-components .vpc-component,
 	#vpc-price-container,
