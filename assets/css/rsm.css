@@ -101,12 +101,12 @@
 .vpc-component .vpc-tab-header {
     display: block;
 	width: 20px;
-  
+
 }
 
 .vpc-component .vpc-tab-header.label-active {
     background: #f1f1f1;
-	
+
 }
 
 .vpc-component .vpc-tab-header h6{
@@ -374,21 +374,40 @@
 }
 
 .info-row .info-desc {
-    display: none;
+    max-height: 0px;
+    opacity: 0;
+    transition: all 1s;
 }
 
 .info-row.active .info-desc {
     display: block;
+    opacity: 1;
+    max-height: 500px;
 }
-
+.info-data .info-name {
+    position: relative;
+}
 .info-data .info-name:after {
-    content: ">";
+    content: " ";
+    background: url('../arrow-right.svg') 0 0 no-repeat;
     font-size: 14px;
     padding-left: 5px;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    margin-left: 5px;
+    top: 2px;
+    transition: transform 0.2s;
+    transform-origin: 5px 8px;
 }
 
 .info-row.active .info-data .info-name:after {
-    content: "<";
+    content: " ";
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 .vpc-action-block {
