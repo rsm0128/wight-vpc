@@ -101,6 +101,8 @@ jQuery(document).ready(function() {
 			var curr_scroll = el_height * (el_index - 1);
 
 			jQuery(this).parents('.vpc-group').animate({ scrollTop: curr_scroll }, 600 );
+		} else {
+			jQuery(this).parents('.vpc-group').animate({ scrollTop: 0 }, 600);
 		}
 	});
 
