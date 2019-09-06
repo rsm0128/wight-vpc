@@ -82,7 +82,7 @@
 }
 
 #vpc-components:before {
-    left: 30px;
+    left: 20px;
 }
 
 .vpc-component:after {
@@ -93,7 +93,7 @@
 #vpc-components .vpc-component {
     position: relative;
     display: flex;
-    min-height: 140px;
+    min-height: 150px;
     width: 50%;
     border-width: 0px!important;
 }
@@ -147,7 +147,7 @@
 .vpc-options label.custom {
     opacity: 0.4;
     overflow: hidden;
-    margin: 10px 5px !important;
+    margin: 5px;
     /*border: 1px solid #6e6f71;*/
     border:  none;
 
@@ -228,7 +228,7 @@
     .vpc-component.BaseTab .vpc-group,
     .vpc-component.Pattern .vpc-group,
     .vpc-component.Shade .vpc-group {
-        height: 420px;
+        height: 450px;
         overflow: hidden;
         display: block;
     }
@@ -252,8 +252,7 @@
     {
         width: 160px;
         height: 80px;
-        margin: 0px;
-        margin-bottom: 0px;
+        margin: 10px 5px;
         overflow: hidden;
         border: 0px!important;
         -webkit-transition: height 0.5s ease-in-out;
@@ -323,23 +322,24 @@
 }
 
 #vpc-preview {
-    max-height: 425px;
+    max-height: 455px;
     overflow: hidden;
     border: 0px solid red!important;
     width: 60%;
-    z-index: 99999!important;
+    z-index: 99!important;
+    margin-left: 20px;
 }
 
 #vpc-preview img {
-    max-width: 425px!important;
+    max-width: 455px!important;
     -webkit-transition: 0.3s ease;
     transition: 0.3s ease;
     width: 100%;
 }
 
 #vpc-preview:hover img {
-    -webkit-transform: scale(3.0);
-    transform: scale(3.0);
+    -webkit-transform: scale(2.0);
+    transform: scale(2.0);
     /* padding-top: 17%; */
 }
 

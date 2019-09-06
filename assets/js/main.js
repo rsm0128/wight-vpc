@@ -30,6 +30,8 @@ jQuery(document).ready(function() {
 		jQuery('.vpc-tab-header.ShadeType').removeClass('label-active');
 		jQuery('.vpc-tab-header.BaseType').removeClass('label-active');
 		jQuery('.vpc-tab-header.Color').addClass('label-active');
+
+		jQuery('.vpc-component.Pattern .vpc-options .vpc-group').scrollTop(0);
 	});
 
 	jQuery('body').on('click', '.vpc-component.ShadeType .vpc-options label', function(){
@@ -93,7 +95,7 @@ jQuery(document).ready(function() {
 	jQuery( "body" ).on( "click", '.Pattern .vpc-group .vpc-single-option-wrap label', function(){
 		//var curr_scroll = jQuery(this).parent().position().top;
 		var el_index = jQuery(this).closest('.vpc-group').find('label').index(jQuery(this));
-		if(el_index !== 1){
+		if(el_index > 0){
 			// var el_height =  jQuery(this).parent().height();
 			var el_height = 100;
 			var curr_scroll = el_height * (el_index - 1);
