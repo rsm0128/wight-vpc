@@ -193,14 +193,17 @@
 
 /* #vpc-container > #vpc-components > .BaseType */
 
-    #vpc-components .vpc-component.BaseType .vpc-options label.custom,
+    #vpc-components .vpc-component.BaseType .vpc-options label.custom {
+        width: 66px;
+        height: 66px;
+    }
     #vpc-components .vpc-component.ShadeType .vpc-options label.custom {
         width: 55px;
         height: 55px;
     }
     #vpc-components .vpc-component.BaseType .vpc-options label.custom:before {
         background-size: 160% 160%;
-        background-position: center -36px;
+        background-position: center -40px;
     }
     #vpc-components .vpc-component.ShadeType .vpc-options label.custom:before {
         background-size: 160% 160%;
