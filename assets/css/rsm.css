@@ -194,8 +194,8 @@
 /* #vpc-container > #vpc-components > .BaseType */
 
     #vpc-components .vpc-component.BaseType .vpc-options label.custom {
-        width: 66px;
-        height: 66px;
+        width: 75px;
+        height: 75px;
     }
     #vpc-components .vpc-component.ShadeType .vpc-options label.custom {
         width: 55px;
@@ -203,7 +203,7 @@
     }
     #vpc-components .vpc-component.BaseType .vpc-options label.custom:before {
         background-size: 160% 160%;
-        background-position: center -40px;
+        background-position: center -50px;
     }
     #vpc-components .vpc-component.ShadeType .vpc-options label.custom:before {
         background-size: 160% 160%;
