@@ -74,10 +74,11 @@
     height: 100%;
     display: block;
     position: absolute;
-    box-shadow: inset 9px 0px 15px -10px rgba(0,0,0,0.5), 9px 0px 10px -10px rgba(0,0,0,0.5) !important;
-    border-left: 1px solid #ccc !important;
+    /*box-shadow: inset 9px 0px 15px -10px rgba(0,0,0,0.5), 9px 0px 10px -10px rgba(0,0,0,0.5) !important;
+    border-left: 1px solid #ccc !important;*/
     /* box-shadow: inset 11px 0px 18px -14px grey, 9px 0px 18px -12px grey;
     border-left: 1px solid #a8a9ad!important; */
+	border-right: 1px solid rgba(0,0,0,0.2) !important;
 }
 
 #vpc-components:before {
@@ -99,11 +100,13 @@
 
 .vpc-component .vpc-tab-header {
     display: block;
-    width: 20px;
+	width: 20px;
+  
 }
 
 .vpc-component .vpc-tab-header.label-active {
     background: #f1f1f1;
+	
 }
 
 .vpc-component .vpc-tab-header h6{
