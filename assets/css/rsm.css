@@ -390,15 +390,16 @@
 .info-data .info-name:after {
     content: " ";
     background: url('../arrow-right.svg') 0 0 no-repeat;
-    font-size: 14px;
+    font-size: 10px;
     padding-left: 5px;
     position: absolute;
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
     margin-left: 5px;
-    top: 2px;
+    top: 4px;
     transition: transform 0.2s;
     transform-origin: 5px 8px;
+    opacity: 0.9;
 }
 
 .info-row.active .info-data .info-name:after {
