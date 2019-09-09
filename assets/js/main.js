@@ -22,7 +22,21 @@ jQuery(document).ready(function() {
 		jQuery('.vpc-tab-header.BaseType').addClass('label-active');
 	});
 
-	jQuery('body').on('click', '.vpc-component.Color .vpc-options label', function(){
+	jQuery('body').on('click', '.vpc-component.Color .vpc-options label', function(e){
+		if (jQuery('.BaseTab .vpc-options input:checked').length == 0 ) {
+			// base is not selected
+			if (jQuery('#rsmModal').length == 0) {
+				var modalHTML = '<div class="modal fade" id="rsmModal" role="dialog"><div class="modal-dialog">' +
+								'<div class="modal-content"><div class="modal-header">' +
+								'<button type="button" class="close" data-dismiss="modal">&times;</button>' +
+								'<h4 class="modal-title">Modal Header</h4>' +
+								'</div></div>' +
+								'</div></div>';
+				jQuery('body').append(modalHTML);
+				jQuery('#rsmModal').modal();
+			}
+			return;
+		}
 		jQuery('.vpc-component.Shade').hide();
 		jQuery('.vpc-component.BaseTab').hide();
 		jQuery('.vpc-component.Pattern').show();
@@ -32,6 +46,7 @@ jQuery(document).ready(function() {
 		jQuery('.vpc-tab-header.Color').addClass('label-active');
 
 		jQuery('.vpc-component.Pattern .vpc-options .vpc-group').scrollTop(0);
+		jQuery('.vpc-component.Color').removeClass('rsm-initial');
 	});
 
 	jQuery('body').on('click', '.vpc-component.ShadeType .vpc-options label', function(){
@@ -42,6 +57,11 @@ jQuery(document).ready(function() {
 		jQuery('.vpc-tab-header.Color').removeClass('label-active');
 		jQuery('.vpc-tab-header.BaseType').removeClass('label-active');
 		jQuery('.vpc-tab-header.ShadeType').addClass('label-active');
+	});
+
+	jQuery('body').on('click', '.vpc-tab-header', function(){
+		jQuery('.vpc-tab-header').removeClass('label-active');
+		jQuery(this).addClass('label-active');
 	});
 
 	// mouse wheel activity
@@ -81,8 +101,6 @@ jQuery(document).ready(function() {
 		var objLeft = jQuery(this).offset().left;
 		var objTop = jQuery(this).offset().top;
 
-		// var objCenterX = objLeft + jQuery(this).width() / 2;
-		// var objCenterY = objTop + jQuery(this).height() / 2;
 		var xPosSTR = (event.pageX - objLeft) + 'px';
 		var yPosSTR = (event.pageY - objTop) + 'px';
 		jQuery('#vpc-preview:hover img').css({
@@ -93,10 +111,8 @@ jQuery(document).ready(function() {
 
 	// scroll action to pattern
 	jQuery( "body" ).on( "click", '.Pattern .vpc-group .vpc-single-option-wrap label', function(){
-		//var curr_scroll = jQuery(this).parent().position().top;
 		var el_index = jQuery(this).closest('.vpc-group').find('label').index(jQuery(this));
 		if(el_index > 0){
-			// var el_height =  jQuery(this).parent().height();
 			var el_height = 100;
 			var curr_scroll = el_height * (el_index - 1);
 
@@ -160,11 +176,21 @@ function getOptionAttribute(str_selector) {
 }
 
 function rsmInitCongurator() {
+	// move price field
 	var oldHtml = jQuery('#vpc-price-container').html();
 	jQuery('#vpc-price-container').html('');
 	jQuery('#vpc-price-container').append('<div class="vpc-action-block"><div class="vpc-price-row">' + oldHtml + '</div><div class="vpc-action-row"></div></div>');
+
+	// move save and buy button
 	jQuery('#vpc-save-btn').text('SAVE').appendTo('.vpc-action-row');
 	jQuery('#vpc-add-to-cart').text('BUY').appendTo('.vpc-action-row');
+
+	// upate product info
 	rsmUpdateProductInfo();
+
+	// make base as clicked
 	jQuery('.vpc-component.BaseType .vpc-options label').click();
+
+	// set all color as selected on load
+	jQuery(".vpc-component.Color").addClass('rsm-initial');
 }
