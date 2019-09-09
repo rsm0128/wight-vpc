@@ -344,9 +344,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: .2;
+    opacity: .15;
     z-index: -1;
     background: url('../bg.png') 0 0 no-repeat;
+}
+
+#vpc-preview.filled-preview:before {
+    display: none;
 }
 
 #vpc-preview img {
@@ -461,3 +465,8 @@ body.fl-theme-builder-footer #vpc-qty-container input[type="button"] {
     background: #b2b3b7!important;
 }
 .sleeping { pointer-events: none; }
+@media (min-width: 768px) {}
+    .modal-content {
+        margin-top: 200px;
+    }
+}

@@ -29,12 +29,12 @@ jQuery(document).ready(function() {
 				var modalHTML = '<div class="modal fade" id="rsmModal" role="dialog"><div class="modal-dialog">' +
 								'<div class="modal-content"><div class="modal-header">' +
 								'<button type="button" class="close" data-dismiss="modal">&times;</button>' +
-								'<h4 class="modal-title">Modal Header</h4>' +
+								'<h4 class="modal-title">Please choose base first</h4>' +
 								'</div></div>' +
 								'</div></div>';
 				jQuery('body').append(modalHTML);
-				jQuery('#rsmModal').modal();
 			}
+			jQuery('#rsmModal').modal();
 			return;
 		}
 		jQuery('.vpc-component.Shade').hide();
@@ -62,6 +62,16 @@ jQuery(document).ready(function() {
 	jQuery('body').on('click', '.vpc-tab-header', function(){
 		jQuery('.vpc-tab-header').removeClass('label-active');
 		jQuery(this).addClass('label-active');
+	});
+
+	jQuery('body').on('click', '.vpc-component.ShadeType .vpc-options label, .vpc-component.Shade .vpc-options label', function(){
+		setTimeout(() => {
+			if ( jQuery('.vpc-component.Shade .vpc-options input:checked').length > 0 ) {
+				jQuery('#vpc-preview').addClass('filled-preview');
+			} else {
+				jQuery('#vpc-preview').removeClass('filled-preview');
+			}
+		}, 100);
 	});
 
 	// mouse wheel activity
