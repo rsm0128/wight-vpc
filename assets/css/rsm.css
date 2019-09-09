@@ -465,8 +465,24 @@ body.fl-theme-builder-footer #vpc-qty-container input[type="button"] {
     background: #b2b3b7!important;
 }
 .sleeping { pointer-events: none; }
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
     .modal-content {
         margin-top: 200px;
     }
+}
+
+.modal-header .close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
 }
