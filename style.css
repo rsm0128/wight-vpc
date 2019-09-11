@@ -99,6 +99,17 @@ img {
 	display: none !important;
 }
 
+.info-data .info-name {
+	margin-top: 1px;
+}
+
+.info-data .info-name:after {
+	opacity: 0.5 !important;
+}
+
+header.entry-header.ast-no-thumbnail.ast-no-meta {
+	margin-top: -45px !important;
+}
 
 
 @media screen and (max-width: 960px) {
