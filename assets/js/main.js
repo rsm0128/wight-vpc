@@ -64,12 +64,21 @@ jQuery(document).ready(function() {
 		jQuery(this).addClass('label-active');
 	});
 
+	jQuery('body').on('click', '.vpc-component.BaseType .vpc-options label, .vpc-component.BaseTab .vpc-options label', function(){
+		setTimeout(() => {
+			if (jQuery('.vpc-component.BaseTab .vpc-options input:checked').length > 0) {
+				jQuery('#vpc-preview').addClass('filled-base');
+			} else {
+				jQuery('#vpc-preview').removeClass('filled-base');
+			}
+		}, 10);
+	});
 	jQuery('body').on('click', '.vpc-component.ShadeType .vpc-options label, .vpc-component.Shade .vpc-options label', function(){
 		setTimeout(() => {
 			if ( jQuery('.vpc-component.Shade .vpc-options input:checked').length > 0 ) {
-				jQuery('#vpc-preview').addClass('filled-preview');
+				jQuery('#vpc-preview').addClass('filled-shade');
 			} else {
-				jQuery('#vpc-preview').removeClass('filled-preview');
+				jQuery('#vpc-preview').removeClass('filled-shade');
 			}
 		}, 100);
 	});
@@ -139,8 +148,8 @@ jQuery(document).ready(function() {
 		jQuery('#vpc-header').append('<img src="https://siteview.app/projects/wight/wp-content/themes/wight-child/logo.png" alt="logo" class="vpc-logo">');
 
 		// update product info
-		jQuery(document).on('click', 'label.custom', function () {
-			rsmUpdateProductInfo();
+		jQuery(document).on('click', 'label.custom', function (e) {
+			rsmUpdateProductInfo(e);
 		});
 
 		jQuery(document).on('click', '.info-row', function () {
@@ -149,12 +158,16 @@ jQuery(document).ready(function() {
 	}
 });
 
-function rsmUpdateProductInfo() {
+function rsmUpdateProductInfo(e) {
 	var base = getOptionAttribute('.BaseTab');
 	var color = getOptionAttribute('.Color');
 	var pattern = getOptionAttribute('.Pattern');
 	var shade = getOptionAttribute('.Shade');
-	var spec = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+
+	console.log(pattern.name);
+	jQuery('.vpc-component.BaseTab .vpc-options').attr('data-content', base.name);
+	jQuery('.vpc-component.Pattern .vpc-options').attr('data-content', pattern.name);
+	jQuery('.vpc-component.Shade .vpc-options').attr('data-content', shade.name);
 
 	var html = '<div class="vpc-info-block">' +
 		'<div class="info-row"><div class="info-label">BASE</div><div class="info-data"><div class="info-name">' + base.name + '</div><div class="info-desc">' + base.description + '</div></div></div>' +
@@ -196,7 +209,7 @@ function rsmInitCongurator() {
 	jQuery('#vpc-add-to-cart').text('BUY').appendTo('.vpc-action-row');
 
 	// upate product info
-	rsmUpdateProductInfo();
+	rsmUpdateProductInfo('');
 
 	// make base as clicked
 	jQuery('.vpc-component.BaseType .vpc-options label').click();
