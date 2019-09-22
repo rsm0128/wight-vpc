@@ -107,8 +107,52 @@ img {
 	opacity: 0.5 !important;
 }
 
+
+
 header.entry-header.ast-no-thumbnail.ast-no-meta {
 	margin-top: -45px !important;
+}
+
+#cboption-5cd94da1ea7a8,
+#cboption-5ccdaf6b31b03,
+#cboption-5cd94db92db8b,
+#cboption-5cd94dbb0907d,
+#cboption-5cd94dbd1ce33,
+#cboption-5cd94dbe019c8 {
+	border: 1px solid rgba(0,0,0,0.5) !important;
+}
+
+
+
+/*
+#vpc-components .vpc-component.BaseType .vpc-options label.custom {
+	width: 85px !important;
+	height: 85px !important;
+	left: -25px;
+}
+
+#vpc-components .vpc-component.ShadeType .vpc-options label.custom {
+	left: -3px;
+}
+
+#vpc-components .vpc-component.BaseTab .vpc-options label.custom {
+	height: 170px !important;
+}
+
+*/
+
+.wpexperts-page .entry-content {
+	padding: 50px 50px 100px 50px !important;
+}
+
+.info-name {
+	font-weight: normal;
+}
+
+.info-desc {
+	font-weight: normal;
+	line-height: 2;
+	
 }
 
 
@@ -118,4 +162,34 @@ header.entry-header.ast-no-thumbnail.ast-no-meta {
 	#vpc-preview-wrap {
 		width: 100% !important;
 	}
+}
+
+@media only screen and (max-width: 768px) {
+	
+	#vpc-price-container {
+		display: flex !important;
+	}
+	
+	#vpc-components {
+    	order: 1 !important;
+		width: 100% !important;
+	}
+	
+	
+	#vpc-preview-wrap {
+		order: 2 !important;
+		width: 100% !important;
+		display:flex; 
+		flex-direction: column
+	}
+	
+	#vpc-price-container {
+		position: relative !important;
+		margin-top: 50px;
+	}
+	
+	
+	
+	
+	
 }

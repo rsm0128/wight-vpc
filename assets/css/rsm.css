@@ -306,8 +306,9 @@
 
     #vpc-components .vpc-component.BaseTab .vpc-options label.custom:before {
         transform-origin: center 0px;
-        width: 80px!important;
-        height: 80px!important;
+        width: 165px!important;
+        height: 165px!important;
+		top: -50px;
     }
     #vpc-components .vpc-component.Pattern .vpc-options label.custom:before {
         transform-origin: center 0px;
