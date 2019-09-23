@@ -74,7 +74,7 @@ img {
 	max-width: 350px;
 }
 
-.vpc-component.Base .vpc-group, .vpc-component.Pattern .vpc-group, .vpc-component.Shade .vpc-group {
+.vpc-component.BaseTab .vpc-group, .vpc-component.Pattern .vpc-group, .vpc-component.Shade .vpc-group {
 	margin-left: 12px !important;
 }
 
@@ -86,7 +86,7 @@ img {
     margin: -20px auto !important;
 }
 
-.vpc-tab-header.BaseType.label-active {
+.vpc-tab-header.Base.label-active {
 	background: #ececec !important;
 }
 
@@ -125,7 +125,7 @@ header.entry-header.ast-no-thumbnail.ast-no-meta {
 
 
 /*
-#vpc-components .vpc-component.BaseType .vpc-options label.custom {
+#vpc-components .vpc-component.Base .vpc-options label.custom {
 	width: 85px !important;
 	height: 85px !important;
 	left: -25px;
@@ -135,7 +135,7 @@ header.entry-header.ast-no-thumbnail.ast-no-meta {
 	left: -3px;
 }
 
-#vpc-components .vpc-component.Base .vpc-options label.custom {
+#vpc-components .vpc-component.BaseTab .vpc-options label.custom {
 	height: 170px !important;
 }
 
