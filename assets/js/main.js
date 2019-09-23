@@ -128,6 +128,8 @@ jQuery(document).ready(function() {
 		if (e.which === 1) {
 			leftButtonDown = true;
 			jQuery('#vpc-preview').addClass('active');
+			jQuery('#vpc-preview:hover img').attr('draggable', false);
+			jQuery('#vpc-preview:hover img').attr('ondragstart', 'return false;');
 		}
 	});
 
