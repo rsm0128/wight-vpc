@@ -13,11 +13,11 @@ jQuery(document).ready(function() {
 
 	// middle column
 	jQuery('body').on('click', '.vpc-component.Base .vpc-options label', function(){
-		jQuery('.vpc-component.Shade').hide();
+		jQuery('.vpc-component.ShadeSub').hide();
 		jQuery('.vpc-component.Pattern').hide();
 		jQuery('.vpc-component.BaseTab').show();
 
-		jQuery('.vpc-tab-header.ShadeType').removeClass('label-active');
+		jQuery('.vpc-tab-header.Shade').removeClass('label-active');
 		jQuery('.vpc-tab-header.Color').removeClass('label-active');
 		jQuery('.vpc-tab-header.Base').addClass('label-active');
 	});
@@ -37,11 +37,11 @@ jQuery(document).ready(function() {
 			jQuery('#rsmModal').modal();
 			return;
 		}
-		jQuery('.vpc-component.Shade').hide();
+		jQuery('.vpc-component.ShadeSub').hide();
 		jQuery('.vpc-component.BaseTab').hide();
 		jQuery('.vpc-component.Pattern').show();
 
-		jQuery('.vpc-tab-header.ShadeType').removeClass('label-active');
+		jQuery('.vpc-tab-header.Shade').removeClass('label-active');
 		jQuery('.vpc-tab-header.Base').removeClass('label-active');
 		jQuery('.vpc-tab-header.Color').addClass('label-active');
 
@@ -49,14 +49,14 @@ jQuery(document).ready(function() {
 		jQuery('.vpc-component.Color').removeClass('rsm-initial');
 	});
 
-	jQuery('body').on('click', '.vpc-component.ShadeType .vpc-options label', function(){
-		jQuery('.vpc-component.Shade').show();
+	jQuery('body').on('click', '.vpc-component.Shade .vpc-options label', function(){
+		jQuery('.vpc-component.ShadeSub').show();
 		jQuery('.vpc-component.Pattern').hide();
 		jQuery('.vpc-component.BaseTab').hide();
 
 		jQuery('.vpc-tab-header.Color').removeClass('label-active');
 		jQuery('.vpc-tab-header.Base').removeClass('label-active');
-		jQuery('.vpc-tab-header.ShadeType').addClass('label-active');
+		jQuery('.vpc-tab-header.Shade').addClass('label-active');
 	});
 
 	jQuery('body').on('click', '.vpc-tab-header', function(){
@@ -73,9 +73,9 @@ jQuery(document).ready(function() {
 			}
 		}, 10);
 	});
-	jQuery('body').on('click', '.vpc-component.ShadeType .vpc-options label, .vpc-component.Shade .vpc-options label', function(){
+	jQuery('body').on('click', '.vpc-component.Shade .vpc-options label, .vpc-component.ShadeSub .vpc-options label', function(){
 		setTimeout(() => {
-			if ( jQuery('.vpc-component.Shade .vpc-options input:checked').length > 0 ) {
+			if ( jQuery('.vpc-component.ShadeSub .vpc-options input:checked').length > 0 ) {
 				jQuery('#vpc-preview').addClass('filled-shade');
 			} else {
 				jQuery('#vpc-preview').removeClass('filled-shade');
@@ -165,7 +165,7 @@ function rsmUpdateProductInfo(e) {
 	var base = getOptionAttribute('.BaseTab');
 	var color = getOptionAttribute('.Color');
 	var pattern = getOptionAttribute('.Pattern');
-	var shade = getOptionAttribute('.Shade');
+	var shade = getOptionAttribute('.ShadeSub');
 
 	var label = '';
 	label = (base.name != '') ? base.name + ' $' + base.price : '';
@@ -177,7 +177,7 @@ function rsmUpdateProductInfo(e) {
 	console.log(label);
 
 	label = (shade.name != '') ? shade.name + ' $' + shade.price : '';
-	jQuery('.vpc-component.Shade .vpc-options').attr('data-content', label);
+	jQuery('.vpc-component.ShadeSub .vpc-options').attr('data-content', label);
 
 	var html = '<div class="vpc-info-block">' +
 		'<div class="info-row"><div class="info-label">BASE</div><div class="info-data"><div class="info-name">' + base.name + '</div><div class="info-desc">' + base.description + '</div></div></div>' +

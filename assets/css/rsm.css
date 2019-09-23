@@ -172,7 +172,7 @@
 
 .vpc-component.Base,
 .vpc-component.Color,
-.vpc-component.ShadeType
+.vpc-component.Shade
  {
     position: relative;
     /* height: 100%; */
@@ -181,14 +181,14 @@
 
 .vpc-component.Base div.vpc-options,
 .vpc-component.Color div.vpc-options,
-.vpc-component.ShadeType div.vpc-options
+.vpc-component.Shade div.vpc-options
 {
     margin: auto 5px auto 15px;
 }
 
 .vpc-component.Base div.vpc-options .vpc-group,
 .vpc-component.Color div.vpc-options .vpc-group,
-.vpc-component.ShadeType div.vpc-options .vpc-group
+.vpc-component.Shade div.vpc-options .vpc-group
 {
     display: table-cell;
     vertical-align:middle;
@@ -200,7 +200,7 @@
         width: 75px;
         height: 75px;
     }
-    #vpc-components .vpc-component.ShadeType .vpc-options label.custom {
+    #vpc-components .vpc-component.Shade .vpc-options label.custom {
         width: 55px;
         height: 55px;
     }
@@ -208,7 +208,7 @@
         background-size: 160% 160%;
         background-position: center -50px;
     }
-    #vpc-components .vpc-component.ShadeType .vpc-options label.custom:before {
+    #vpc-components .vpc-component.Shade .vpc-options label.custom:before {
         background-size: 160% 160%;
         background-position: center 0;
     }
@@ -220,7 +220,7 @@
 /* #vpc-container > #vpc-components > .Pattern */
     #vpc-components .vpc-component.BaseTab,
     #vpc-components .vpc-component.Pattern,
-    #vpc-components .vpc-component.Shade {
+    #vpc-components .vpc-component.ShadeSub {
         position: absolute;
         top: 0;
         right: 0;
@@ -230,13 +230,13 @@
 
     #vpc-components .vpc-component.BaseTab .vpc-options,
     #vpc-components .vpc-component.Pattern .vpc-options,
-    #vpc-components .vpc-component.Shade .vpc-options {
+    #vpc-components .vpc-component.ShadeSub .vpc-options {
         margin-bottom: 50px;
     }
 
     #vpc-components .vpc-component.BaseTab .vpc-options:before,
     #vpc-components .vpc-component.Pattern .vpc-options:before,
-    #vpc-components .vpc-component.Shade .vpc-options:before {
+    #vpc-components .vpc-component.ShadeSub .vpc-options:before {
         position: absolute;
         bottom: -50px;
         width: 100%;
@@ -251,7 +251,7 @@
 
     .vpc-component.BaseTab .vpc-group,
     .vpc-component.Pattern .vpc-group,
-    .vpc-component.Shade .vpc-group {
+    .vpc-component.ShadeSub .vpc-group {
         height: 450px;
         overflow: hidden;
         display: block;
@@ -259,20 +259,20 @@
 
     .BaseTab.vpc-tab-header,
     .Pattern .vpc-tab-header,
-    .Shade .vpc-tab-header
+    .ShadeSub .vpc-tab-header
     {
         display: none;
     }
 
     #vpc-components .vpc-component.BaseTab .vpc-single-option-wrap,
     #vpc-components .vpc-component.Pattern .vpc-single-option-wrap,
-    #vpc-components .vpc-component.Shade .vpc-single-option-wrap {
+    #vpc-components .vpc-component.ShadeSub .vpc-single-option-wrap {
         width: 100%;
     }
 
     #vpc-components .vpc-component.BaseTab .vpc-options label.custom,
     #vpc-components .vpc-component.Pattern .vpc-options label.custom,
-    #vpc-components .vpc-component.Shade .vpc-options label.custom
+    #vpc-components .vpc-component.ShadeSub .vpc-options label.custom
     {
         width: 160px;
         height: 80px;
@@ -289,13 +289,13 @@
     #vpc-components .vpc-component.Pattern .vpc-options input[type="radio"]:checked+label.custom {
         height: 160px;
     }
-    #vpc-components .vpc-component.Shade .vpc-options input[type="radio"]:checked+label.custom {
+    #vpc-components .vpc-component.ShadeSub .vpc-options input[type="radio"]:checked+label.custom {
         height: 140px;
     }
 
     #vpc-components .vpc-component.BaseTab .vpc-options label.custom:before,
     #vpc-components .vpc-component.Pattern .vpc-options label.custom:before,
-    #vpc-components .vpc-component.Shade .vpc-options label.custom:before
+    #vpc-components .vpc-component.ShadeSub .vpc-options label.custom:before
     {
         -webkit-transition: transform 0.5s ease-in-out;
         -moz-transition: transform 0.5s ease-in-out;
@@ -317,7 +317,7 @@
         width: 80px!important;
         height: 80px!important;
     }
-    #vpc-components .vpc-component.Shade .vpc-options label.custom:before {
+    #vpc-components .vpc-component.ShadeSub .vpc-options label.custom:before {
         transform-origin: center 0px;
         width: 120px !important;
         height: 120px !important;
@@ -325,7 +325,7 @@
 
     #vpc-components .vpc-component.BaseTab .vpc-options input[type="radio"]:checked+label.custom:before,
     #vpc-components .vpc-component.Pattern .vpc-options input[type="radio"]:checked+label.custom:before,
-    #vpc-components .vpc-component.Shade .vpc-options input[type="radio"]:checked+label.custom:before
+    #vpc-components .vpc-component.ShadeSub .vpc-options input[type="radio"]:checked+label.custom:before
     {
         -webkit-transform: scale(2.0);
         transform: scale(2.0);

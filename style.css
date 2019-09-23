@@ -74,7 +74,7 @@ img {
 	max-width: 350px;
 }
 
-.vpc-component.BaseTab .vpc-group, .vpc-component.Pattern .vpc-group, .vpc-component.Shade .vpc-group {
+.vpc-component.BaseTab .vpc-group, .vpc-component.Pattern .vpc-group, .vpc-component.ShadeSub .vpc-group {
 	margin-left: 12px !important;
 }
 
@@ -82,7 +82,7 @@ img {
 	border: none !important;
 }
 
-#vpc-components .vpc-component.Shade .vpc-single-option-wrap {
+#vpc-components .vpc-component.ShadeSub .vpc-single-option-wrap {
     margin: -20px auto !important;
 }
 
@@ -131,7 +131,7 @@ header.entry-header.ast-no-thumbnail.ast-no-meta {
 	left: -25px;
 }
 
-#vpc-components .vpc-component.ShadeType .vpc-options label.custom {
+#vpc-components .vpc-component.Shade .vpc-options label.custom {
 	left: -3px;
 }
 

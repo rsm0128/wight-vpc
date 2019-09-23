@@ -14,7 +14,7 @@
 
 		font-size: 13px;
 	}
-	.vpc-component.BaseTab div.vpc-options, .vpc-component.Color div.vpc-options, .vpc-component.Shade div.vpc-options {
+	.vpc-component.BaseTab div.vpc-options, .vpc-component.Color div.vpc-options, .vpc-component.ShadeSub div.vpc-options {
 		width: 100%!important;
 		height: fit-content;
 		overflow: hidden;
@@ -31,7 +31,7 @@
 		float: none!important;
 	}
 
-	.vpc-component.BaseTab, .vpc-component.Color, .vpc-component.Shade {
+	.vpc-component.BaseTab, .vpc-component.Color, .vpc-component.ShadeSub {
 		min-height: 145px!important;
 	}
 	.Pattern .vpc-group {
@@ -98,7 +98,7 @@
 		width: 100%;
 	}
 
-	.vpc-component.BaseTab div.vpc-options, .vpc-component.Color div.vpc-options, .vpc-component.Shade div.vpc-options {
+	.vpc-component.BaseTab div.vpc-options, .vpc-component.Color div.vpc-options, .vpc-component.ShadeSub div.vpc-options {
 		width: 100%!important;
 		height: fit-content;
 		overflow: hidden;
@@ -128,7 +128,7 @@
 		width: 100%;
 	}
 
-	.vpc-component.BaseTab div.vpc-options, .vpc-component.Color div.vpc-options, .vpc-component.Shade div.vpc-options {
+	.vpc-component.BaseTab div.vpc-options, .vpc-component.Color div.vpc-options, .vpc-component.ShadeSub div.vpc-options {
 		width: 100%!important;
 		height: fit-content;
 		overflow: hidden;
@@ -170,7 +170,7 @@
 	#vpc-preview-wrap {
 		width: 60%!important;
 	}
-	.vpc-component.BaseTab, .vpc-component.Color, .vpc-component.Shade {
+	.vpc-component.BaseTab, .vpc-component.Color, .vpc-component.ShadeSub {
 		min-height: 145px!important;
 	}
 	.Pattern .vpc-group {
