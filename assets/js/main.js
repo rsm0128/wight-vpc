@@ -85,11 +85,11 @@ jQuery(document).ready(function() {
 
 	// mouse wheel activity
 	jQuery('body').on('mousemove','.Pattern .vpc-group', function(){
-		if(state == 'no'){
+		if(state == 'no'){ // ensures only call at first
 			state = 'yes';
 
-			jQuery('body .Pattern .vpc-group').mousedown(function(){ MOUSE_OVER=true; });
-			jQuery('body .Pattern .vpc-group').mouseup(function(){ MOUSE_OVER=false; });
+			jQuery('body .Pattern .vpc-group').mouseenter(function(){ MOUSE_OVER=true; });
+			jQuery('body .Pattern .vpc-group').mouseleave(function(){ MOUSE_OVER=false; });
 
 			jQuery('body .vpc-group').bind('mousewheel', function(e){
 				var curr_scroll = jQuery(this).scrollTop();
@@ -116,10 +116,25 @@ jQuery(document).ready(function() {
 		}
 	});
 
-	jQuery('body').on('mousemove', '#vpc-preview', function(e){
-		if (!MOUSE_OVER) return false;
-		var objLeft = jQuery(this).offset().left;
-		var objTop = jQuery(this).offset().top;
+	var leftButtonDown = false;
+	jQuery('body').on('mouseup', function(e){
+		if (e.which === 1 && leftButtonDown) {
+			leftButtonDown = false;
+			jQuery('#vpc-preview').removeClass('active');
+		}
+	});
+
+	jQuery('body').on('mousedown', '#vpc-preview', function(e){
+		if (e.which === 1) {
+			leftButtonDown = true;
+			jQuery('#vpc-preview').addClass('active');
+		}
+	});
+
+	jQuery('body').on('mousemove', function(e){
+		if (!leftButtonDown) return;
+		var objLeft = jQuery('#vpc-preview').offset().left;
+		var objTop = jQuery('#vpc-preview').offset().top;
 
 		var xPosSTR = (event.pageX - objLeft) + 'px';
 		var yPosSTR = (event.pageY - objTop) + 'px';
@@ -170,12 +185,10 @@ function rsmUpdateProductInfo(e) {
 
 	var label = '';
 	label = (base.name != '') ? base.name + ' $' + base.price : '';
-	console.log(label);
 	jQuery('.vpc-component.BaseTab .vpc-options').attr('data-content', label);
 
 	label = (pattern.name != '') ? pattern.name + ' $' + pattern.price : '';
 	jQuery('.vpc-component.Pattern .vpc-options').attr('data-content', label);
-	console.log(label);
 
 	label = (shade.name != '') ? shade.name + ' $' + shade.price : '';
 	jQuery('.vpc-component.ShadeSub .vpc-options').attr('data-content', label);

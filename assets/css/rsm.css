@@ -388,12 +388,10 @@
 
 #vpc-preview img {
     max-width: 455px!important;
-    -webkit-transition: 0.3s ease;
-    transition: 0.3s ease;
     width: 100%;
 }
 
-#vpc-preview:hover img {
+#vpc-preview.active img {
     -webkit-transform: scale(2.0);
     transform: scale(2.0);
     /* padding-top: 17%; */
