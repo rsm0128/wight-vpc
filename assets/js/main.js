@@ -149,7 +149,10 @@ jQuery(document).ready(function() {
 
 		// update product info
 		jQuery(document).on('click', 'label.custom', function (e) {
-			rsmUpdateProductInfo(e);
+			// delay so that makes sure it called lately
+			setTimeout(() => {
+				rsmUpdateProductInfo(e);
+			}, 10);
 		});
 
 		jQuery(document).on('click', '.info-row', function () {
@@ -164,10 +167,17 @@ function rsmUpdateProductInfo(e) {
 	var pattern = getOptionAttribute('.Pattern');
 	var shade = getOptionAttribute('.Shade');
 
-	console.log(pattern.name);
-	jQuery('.vpc-component.BaseTab .vpc-options').attr('data-content', base.name);
-	jQuery('.vpc-component.Pattern .vpc-options').attr('data-content', pattern.name);
-	jQuery('.vpc-component.Shade .vpc-options').attr('data-content', shade.name);
+	var label = '';
+	label = (base.name != '') ? base.name + ' $' + base.price : '';
+	console.log(label);
+	jQuery('.vpc-component.BaseTab .vpc-options').attr('data-content', label);
+
+	label = (pattern.name != '') ? pattern.name + ' $' + pattern.price : '';
+	jQuery('.vpc-component.Pattern .vpc-options').attr('data-content', label);
+	console.log(label);
+
+	label = (shade.name != '') ? shade.name + ' $' + shade.price : '';
+	jQuery('.vpc-component.Shade .vpc-options').attr('data-content', label);
 
 	var html = '<div class="vpc-info-block">' +
 		'<div class="info-row"><div class="info-label">BASE</div><div class="info-data"><div class="info-name">' + base.name + '</div><div class="info-desc">' + base.description + '</div></div></div>' +
