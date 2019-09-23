@@ -88,8 +88,8 @@ jQuery(document).ready(function() {
 		if(state == 'no'){
 			state = 'yes';
 
-			jQuery('body .Pattern .vpc-group').mouseenter(function(){ MOUSE_OVER=true; });
-			jQuery('body .Pattern .vpc-group').mouseleave(function(){ MOUSE_OVER=false; });
+			jQuery('body .Pattern .vpc-group').mousedown(function(){ MOUSE_OVER=true; });
+			jQuery('body .Pattern .vpc-group').mouseup(function(){ MOUSE_OVER=false; });
 
 			jQuery('body .vpc-group').bind('mousewheel', function(e){
 				var curr_scroll = jQuery(this).scrollTop();
