@@ -117,6 +117,7 @@ jQuery(document).ready(function() {
 	});
 
 	jQuery('body').on('mousemove', '#vpc-preview', function(e){
+		if (!MOUSE_OVER) return false;
 		var objLeft = jQuery(this).offset().left;
 		var objTop = jQuery(this).offset().top;
 
