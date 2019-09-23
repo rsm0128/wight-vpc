@@ -15,7 +15,7 @@ jQuery(document).ready(function() {
 	jQuery('body').on('click', '.vpc-component.Base .vpc-options label', function(){
 		jQuery('.vpc-component.Shade').hide();
 		jQuery('.vpc-component.Pattern').hide();
-		jQuery('.vpc-component.Base').show();
+		jQuery('.vpc-component.BaseTab').show();
 
 		jQuery('.vpc-tab-header.ShadeType').removeClass('label-active');
 		jQuery('.vpc-tab-header.Color').removeClass('label-active');
@@ -23,7 +23,7 @@ jQuery(document).ready(function() {
 	});
 
 	jQuery('body').on('click', '.vpc-component.Color .vpc-options label', function(e){
-		if (jQuery('.Base .vpc-options input:checked').length == 0 ) {
+		if (jQuery('.BaseTab .vpc-options input:checked').length == 0 ) {
 			// base is not selected
 			if (jQuery('#rsmModal').length == 0) {
 				var modalHTML = '<div class="modal fade" id="rsmModal" role="dialog"><div class="modal-dialog">' +
@@ -38,7 +38,7 @@ jQuery(document).ready(function() {
 			return;
 		}
 		jQuery('.vpc-component.Shade').hide();
-		jQuery('.vpc-component.Base').hide();
+		jQuery('.vpc-component.BaseTab').hide();
 		jQuery('.vpc-component.Pattern').show();
 
 		jQuery('.vpc-tab-header.ShadeType').removeClass('label-active');
@@ -52,7 +52,7 @@ jQuery(document).ready(function() {
 	jQuery('body').on('click', '.vpc-component.ShadeType .vpc-options label', function(){
 		jQuery('.vpc-component.Shade').show();
 		jQuery('.vpc-component.Pattern').hide();
-		jQuery('.vpc-component.Base').hide();
+		jQuery('.vpc-component.BaseTab').hide();
 
 		jQuery('.vpc-tab-header.Color').removeClass('label-active');
 		jQuery('.vpc-tab-header.Base').removeClass('label-active');
@@ -64,9 +64,9 @@ jQuery(document).ready(function() {
 		jQuery(this).addClass('label-active');
 	});
 
-	jQuery('body').on('click', '.vpc-component.Base .vpc-options label, .vpc-component.Base .vpc-options label', function(){
+	jQuery('body').on('click', '.vpc-component.Base .vpc-options label, .vpc-component.BaseTab .vpc-options label', function(){
 		setTimeout(() => {
-			if (jQuery('.vpc-component.Base .vpc-options input:checked').length > 0) {
+			if (jQuery('.vpc-component.BaseTab .vpc-options input:checked').length > 0) {
 				jQuery('#vpc-preview').addClass('filled-base');
 			} else {
 				jQuery('#vpc-preview').removeClass('filled-base');
@@ -162,7 +162,7 @@ jQuery(document).ready(function() {
 });
 
 function rsmUpdateProductInfo(e) {
-	var base = getOptionAttribute('.Base');
+	var base = getOptionAttribute('.BaseTab');
 	var color = getOptionAttribute('.Color');
 	var pattern = getOptionAttribute('.Pattern');
 	var shade = getOptionAttribute('.Shade');
@@ -170,7 +170,7 @@ function rsmUpdateProductInfo(e) {
 	var label = '';
 	label = (base.name != '') ? base.name + ' $' + base.price : '';
 	console.log(label);
-	jQuery('.vpc-component.Base .vpc-options').attr('data-content', label);
+	jQuery('.vpc-component.BaseTab .vpc-options').attr('data-content', label);
 
 	label = (pattern.name != '') ? pattern.name + ' $' + pattern.price : '';
 	jQuery('.vpc-component.Pattern .vpc-options').attr('data-content', label);
