@@ -38,7 +38,7 @@
 		height: 425px!important;
 	}
 	#vpc-components .vpc-component.Pattern {
-		margin-top: -288px!important;
+		/* margin-top: -288px!important; */
 	}
 	/*#vpc-components .vpc-component.Pattern .vpc-options input[type="radio"]:checked+label.custom:before {
 		margin-top: 0%!important;
@@ -48,6 +48,11 @@
 	}*/
 	#vpc-price-container {
 		text-align: center!important;
+		order: 2;
+		width: 100%;
+	}
+	#vpc-preview {
+		width: 100%;
 	}
 
 }

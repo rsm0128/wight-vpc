@@ -160,7 +160,7 @@ header.entry-header.ast-no-thumbnail.ast-no-meta {
 	#vpc-components .vpc-component,
 	#vpc-price-container,
 	#vpc-preview-wrap {
-		width: 100% !important;
+		/* width: 100% !important; */
 	}
 }
 

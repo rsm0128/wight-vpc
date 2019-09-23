@@ -65,6 +65,7 @@
 #vpc-preview-wrap {
     position: relative;
     width: 64%;
+    top: 0px !important;
 }
 
 /* #vpc-container > #vpc-components */
@@ -389,6 +390,10 @@
 #vpc-preview img {
     max-width: 455px!important;
     width: 100%;
+}
+
+#vpc-preview.active:before, #vpc-preview.active:after {
+    display: none;
 }
 
 #vpc-preview.active img {
