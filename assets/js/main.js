@@ -242,4 +242,11 @@ function rsmInitCongurator() {
 
 	// set all color as selected on load
 	jQuery(".vpc-component.Color").addClass('rsm-initial');
+
+	if (jQuery('.vpc-component.BaseTab .vpc-options input:checked').length > 0) {
+		jQuery('#vpc-preview').addClass('filled-base');
+	}
+	if (jQuery('.vpc-component.ShadeSub .vpc-options input:checked').length > 0) {
+		jQuery('#vpc-preview').addClass('filled-shade');
+	}
 }
