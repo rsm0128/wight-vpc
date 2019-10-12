@@ -1,5 +1,6 @@
 var MOUSE_OVER = false;
-document.addEventListener("mousewheel", function(e){
+document.addEventListener("wheel", function(e){
+	console.log('in');
 	if (MOUSE_OVER) {
 		e.preventDefault();
 		return false;
@@ -87,23 +88,22 @@ jQuery(document).ready(function() {
 	jQuery('body').on('mousemove','.Pattern .vpc-group', function(){
 		if(state == 'no'){ // ensures only call at first
 			state = 'yes';
-
 			jQuery('body .Pattern .vpc-group').mouseenter(function(){ MOUSE_OVER=true; });
 			jQuery('body .Pattern .vpc-group').mouseleave(function(){ MOUSE_OVER=false; });
 
-			jQuery('body .vpc-group').bind('mousewheel', function(e){
+			jQuery('body .vpc-group').on('wheel', function (event){
 				var curr_scroll = jQuery(this).scrollTop();
 
-				var delta = e.originalEvent.wheelDelta;
+				// var delta = e.originalEvent.wheelDelta;
 				if(scroll_state == 'yes'){
-					if(delta > 0){
+					if (event.originalEvent.deltaY < 0) {
+					// if(delta > 0){
 						//go up
 						scroll_state = 'no';
 						jQuery(this).animate({ scrollTop: curr_scroll - 300 }, 600, function(){
 							scroll_state = 'yes';
 						});
-					}
-					else{
+					} else {
 						//go down
 						scroll_state = 'no';
 						jQuery(this).animate({ scrollTop: curr_scroll + 300 }, 600, function(){
