@@ -155,6 +155,243 @@ header.entry-header.ast-no-thumbnail.ast-no-meta {
 
 }
 
+.vpc-success {
+	
+	float: right !important;
+	margin-right: 28%;
+	margin-top: -92px;
+	background-color: transparent !important;
+	text-transform: uppercase !important;
+	font-size: 0,75em;
+	color: #f06917 !important;
+}
+
+
+
+.vpc-success a {
+	display: block;
+	text-transform: uppercase !important;
+	color: #79c2c9 !important;
+}
+
+#vpc-components .vpc-component.Base .vpc-options label.custom {
+	margin-left: -20px; 
+	height: 85px !important;
+	width: 85px !important;
+}
+
+
+
+#vpc-components .vpc-component.BaseTab .vpc-options label.custom {
+	margin-left: 15px !important;
+}
+
+.popup_cont {
+	border-radius: 20px !important;
+	top: 25%;
+	width: 50%;
+	left: 30%;
+	text-align: center;
+}
+
+#config_name {
+	width: 100%;
+	
+}
+
+.wpc_heade .line {
+    padding: 16px 10px;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    text-align: left;
+}
+
+.info-name {
+	/*margin-bottom: -3px !important;*/
+	line-height: 1.4 !important;
+}
+
+.info-desc {
+	margin-bottom: 10px !important;
+	line-height: 1.4 !important;
+}
+
+.info-italic {
+	font-style: italic;
+}
+
+#vpc-components .vpc-component.BaseTab .vpc-options:before, 
+#vpc-components .vpc-component.Pattern .vpc-options:before, 
+#vpc-components .vpc-component.ShadeSub .vpc-options:before  {
+	text-align: right !important;
+}
+
+
+/* Sample Forms */
+
+.login-form,
+.sfl-form {
+	display: block;
+	margin: 0 auto;
+	border-radius: 10px;
+	border: 1px solid #000;
+	width: 500px;
+	padding: 5px 20px; 
+	
+}
+
+.login-form-title,
+.sfl-form-title {
+	font-size: 36px;
+	color: #555;
+}
+
+.form-title h1.sfl-form-title {
+	margin-bottom: 40px;
+}
+
+
+.login-form input,
+.sfl-form input {
+	width: 100%;
+	border-radius: 0px !important;
+	border: 1px solid #ccc;
+	background-color: #fff;
+}
+
+.login-form .login-form-title,
+.sfl-form .sfl-form-title {
+	margin: 0px;
+	font-weight: 300;
+}
+
+.login-form .login-form-register-link,
+.sfl-form .sfl-form-register-link {
+	letter-spacing: 1px;
+	float: right;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+.login-form .login-form-username,
+.sfl-form .sfl-form-form-username {
+	margin-bottom: 25px;
+}
+
+.login-form .login-form-username label,
+.login-form .login-form-pword label,
+.sfl-form .sfl-form-cname label,
+.sfl-form .sfl-form-pword label,
+.sfl-form label,
+.sfl-form span {
+	color: #888;
+	font-weight: 500;
+}
+
+.sfl-form-name label {
+	font-weight: 500 !important;
+}
+
+.login-form .login-form-pword,
+.sfl-form .sfl-form-pword {
+	margin-bottom: 25px;
+}
+
+
+
+.login-form .label-remember,
+.sfl-form .label-remember {
+	float: right;
+}
+
+.login-form input.checked {
+	width: auto !important;
+}
+
+
+.login-form-button-section,
+.sfl-form-button-section {
+	margin-bottom: 20px;
+}
+
+
+.login-form-button a,
+.sfl-form-button a {
+	display: block;
+	font-size: 18px;
+	text-align: right;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+}
+
+.sfl-form-instruct-copy .title {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #666 !important;
+}
+
+
+.login-form-forgot,
+.sfl-form-forgot {
+	margin-bottom: 20px;
+	text-align: right;
+}
+
+.login-form-forgot a,
+.sfl-form-forgot a {
+	font-style: italic;
+	color: #888 !important;
+}
+
+.sfl-form-name {
+	font-weight: 600;
+	color: #666;
+}
+
+.sfl-form-instruct-copy {
+	margin-top: 20px;
+}
+
+.sfl-form-login,
+.sfl-form-create,
+.sfl-form-save {
+	text-align: right;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+}
+
+.sfl-form-login a,
+.sfl-form-create a,
+.sfl-form-save a {
+	font-weight: 600;
+}
+
+.sfl-form-save .desc {
+	font-style: italic;
+	letter-spacing: 0px;
+}
+
+
+
+
+/*<div class="login-form-button-section">
+    
+        <div class="login-form-button">
+            <a href="#">Login</a>
+        </div>
+        
+        <div class="login-form-forgot">
+            <span>Forgot <a href="#">password?</a></span>
+        </div>
+    </div>*/
+
+
+
+
+
+
 
 @media screen and (max-width: 960px) {
 	#vpc-components .vpc-component,

@@ -76,6 +76,17 @@ function rsm_woo_add_continue_shopping_button_to_cart() {
  $shop_page_url = empty(RSM_BUILDER_PAGE_URL) ? get_permalink( wc_get_page_id( 'shop' ) ) : RSM_BUILDER_PAGE_URL;
 
  echo '<div class="woocommerce-message">';
- echo ' <a href="'.$shop_page_url.'" class="button">Continue Shopping →</a> Would you like some more goods?';
+ echo ' <a href="'.$shop_page_url.'" class="button">Continue Shopping →</a> Would you like to build a new lamp?';
  echo '</div>';
 }
+add_filter( 'wc_add_to_cart_message', 'my_add_to_cart_function', 10, 2 ); 
+
+add_filter( 'wc_add_to_cart_message', 'custom_wc_add_to_cart_message', 10, 2 ); 
+
+ function custom_wc_add_to_cart_message( $message, $product_id ) { 
+
+ $message = sprintf( '%s has been added to your selection.', get_the_title( $product_id ) ); 
+
+ return $message; 
+
+ }
