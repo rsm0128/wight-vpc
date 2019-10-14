@@ -239,6 +239,11 @@ header.entry-header.ast-no-thumbnail.ast-no-meta {
 	background: #fff;
 	padding: 20px 0 20px 20px;
 }
+@media (min-width: 768px) {
+	.sfl-form-wrapper {
+		padding-right: 40px;
+	}
+}
 
 .login-form,
 .sfl-form {
@@ -247,7 +252,7 @@ header.entry-header.ast-no-thumbnail.ast-no-meta {
 	/* width: 500px; */
 	padding: 5px 20px;
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 	font-size: 14px;
 }
 
