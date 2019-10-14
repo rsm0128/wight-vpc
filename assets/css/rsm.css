@@ -60,6 +60,7 @@
 #vpc-components {
     position: relative;
     width: 36%;
+    z-index: 2;
 }
 
 #vpc-preview-wrap {

@@ -79,14 +79,71 @@ function rsm_woo_add_continue_shopping_button_to_cart() {
  echo ' <a href="'.$shop_page_url.'" class="button">Continue Shopping →</a> Would you like to build a new lamp?';
  echo '</div>';
 }
-add_filter( 'wc_add_to_cart_message', 'my_add_to_cart_function', 10, 2 ); 
 
-add_filter( 'wc_add_to_cart_message', 'custom_wc_add_to_cart_message', 10, 2 ); 
+add_filter( 'wc_add_to_cart_message', 'custom_wc_add_to_cart_message', 10, 2 );
 
- function custom_wc_add_to_cart_message( $message, $product_id ) { 
+ function custom_wc_add_to_cart_message( $message, $product_id ) {
 
- $message = sprintf( '%s has been added to your selection.', get_the_title( $product_id ) ); 
+ $message = sprintf( '%s has been added to your selection.', get_the_title( $product_id ) );
 
- return $message; 
+ return $message;
 
+ }
+
+ add_action( 'vpc_after_components', 'rsm_sfl_form', 10, 3 );
+ function rsm_sfl_form( $config, $product_id, $config_to_load ) {
+ ?>
+ 		<div class="sfl-form-wrapper">
+          <div class="sfl-form">
+            <div>
+                <div class="form-title">
+				  <h1 class="sfl-form-title">LOVE IT</h1>
+				  <div class="sfl-form-close">
+					  &times;
+				  </div>
+                </div>
+            </div>
+            <div>
+                <div class="sfl-form-name">
+                    <span>SAVE TO MY GALLERY</span>
+                    <input type="text" placeholder="" name="cname" id="config_name" required><br>
+                    <label for="cname">name your lamp</label>
+                </div>
+			</div>
+
+			<?php if ( is_user_logged_in() ) : ?>
+
+			<div>
+                <div class="sfl-form-save">
+                    <span><a href="#" id="save_configuration">SAVE</a> TO NEW GALLERY</span><br>
+                </div>
+			</div>
+
+			<?php else : ?>
+
+			<div class="sfl-form-instruct">
+                <p class="sfl-form-instruct-copy"><span class="title">HAVE AN EXISTING ACCOUNT?</span><br>
+                <span style="font-style: italic">If so, login now to save this design to your existing gallery.</span></p>
+                <p class="sfl-form-instruct-copy">
+                <span style="font-style: italic">If not, create an account now or anytime before you leave to save all your beautiful designs into your account gallery.</span>
+                </p>
+            </div>
+            <div>
+                 <div class="sfl-form-login">
+                    <a href="#">LOGIN</a> TO MY ACCOUNT
+                </div>
+                <div class="sfl-form-create">
+                    <a href="#">CREATE</a> AN ACCOUNT
+                </div>
+                <div class="sfl-form-save">
+                    <span><a href="#" id="save_configuration">SAVE</a> TO NEW GALLERY</span><br>
+                    <span class="desc">I'll create my account later.</span>
+                </div>
+			</div>
+			<?php endif; ?>
+
+          </div>
+		</div>
+
+ <?php
  }

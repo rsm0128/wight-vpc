@@ -1,6 +1,5 @@
 var MOUSE_OVER = false;
 document.addEventListener("wheel", function(e){
-	console.log('in');
 	if (MOUSE_OVER) {
 		e.preventDefault();
 		return false;
@@ -159,6 +158,63 @@ jQuery(document).ready(function() {
 		}
 	});
 
+	jQuery('body').on('click', '.sfl-form-close', function(){
+		jQuery('.sfl-form-wrapper').hide();
+	});
+
+	jQuery('body').on('click', '#vpc-save-btn', function (e) {
+		e.stopPropagation();
+		e.preventDefault();
+		jQuery('.sfl-form-wrapper').show();
+		return false;
+	});
+
+	jQuery('body').on('click', '#save_configuration', function (e) {
+		e.stopPropagation();
+		e.preventDefault();
+		jQuery('.loader').show('slow');
+
+		var pid = jQuery('#vpc-save-btn').data('pid');
+		var config_name = jQuery('#config_name').val();
+		var recap = jQuery('#vpc-container').find(':input').serializeJSON();
+		if (!vpc.log) {
+			jQuery.post(
+				ajax_object.ajax_url,
+				{
+					action: "save_in_cookies",
+					pid: pid,
+					recap: recap,
+					config_name: config_name
+				},
+				function (data) {
+					jQuery('.loader').hide();
+					window.location = vpc.login_page;
+				}
+			);
+		}
+		else {
+			jQuery.post(
+				ajax_object.ajax_url,
+				{
+					action: "save_for_later",
+					pid: pid,
+					recap: recap,
+					config_name: config_name
+				},
+				function (id) {
+					jQuery('.loader').hide();
+
+					var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?edit_config=' + id;
+					var newHtml = '<div class="saved_bloc"><a class="save_later" href="' + newUrl + '">' + config_name + '</a><span id="delete_saved" data-id="' + id + '">x</span></div>';
+					jQuery('.saved_panel .saved_configurations').append(newHtml);
+
+					jQuery('#debug').html('<div class="vpc-success f-right">' + vpc.success_msg + '</div>').show().delay(1000).fadeOut(1000);
+					// location.reload();
+				}
+			);
+		}
+	});
+
 	if (jQuery('#vpc-ajax-container').length) {
 		// create a header section and move h1 to header, add logo
 		jQuery('#vpc-ajax-container').before('<div id="vpc-header"><style>.entry-content{padding:50px;margin-left:-50px;margin-right:-50px;border: solid 1px #666;}</style></div>');
@@ -249,4 +305,7 @@ function rsmInitCongurator() {
 	if (jQuery('.vpc-component.ShadeSub .vpc-options input:checked').length > 0) {
 		jQuery('#vpc-preview').addClass('filled-shade');
 	}
+
+	// add loader
+	jQuery("#vpc-container").append("<div class='loader'><img src='" + myPluginVars.pluginUrl + "loader.gif'></div>");
 }
