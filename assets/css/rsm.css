@@ -528,18 +528,15 @@ body.fl-theme-builder-footer #vpc-qty-container input[type="button"] {
 .rsm-flex-wrapper {
     display: flex;
 }
-.rsm-flex-wrapper > * {
-    margin: 0 10px 10px;
-}
 .rsm-flex-half {
     flex-grow: 1;
     flex-basis: 0;
 }
 .woocommerce-cart-form__cart-item {
-    padding: 30px 0;
+    padding: 50px 0 30px;
 }
 .woocommerce-cart-form__cart-item + .woocommerce-cart-form__cart-item {
-    border-top: 2px solid #ccc;
+    border-top: 1px solid #333;
 }
 .woocommerce-cart-form__cart-item .vpc-cart-config-image {
     border: 1px solid #ccc;
@@ -547,6 +544,11 @@ body.fl-theme-builder-footer #vpc-qty-container input[type="button"] {
 .woocommerce-cart-form__cart-item a.remove {
     width:auto !important;
     border: none !important;
+}
+.woocommerce-cart-form__cart-item .product-action-wrapper {
+    max-width: 450px;
+    margin: 0 auto;
+    display: flex;
 }
 .woocommerce-cart-form__cart-item a.edit-lamp {
     display: block;
@@ -559,11 +561,30 @@ body.fl-theme-builder-footer #vpc-qty-container input[type="button"] {
     line-height: 20px;
     text-align: left;
 }
-.woocommerce-cart-form__cart-item .quantity {
-    float: right;
+.woocommerce-cart-form__cart-item .product-thumbnail {
+    flex-grow: 2;
+    flex-basis: 0;
+}
+.woocommerce-cart-form__cart-item .product-name {
+    padding-left: 25px;
+    padding-right: 50px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.woocommerce-cart-form__cart-item .product-name .rsm-flex-wrapper {
+    margin-bottom: 10px;
+}
+.woocommerce-cart-form__cart-item .product-name .base-image, .woocommerce-cart-form__cart-item .product-name .shade-image {
+    margin-right: 15px;
+}
+.woocommerce-cart-form__cart-item .product-name .cover-image, .woocommerce-cart-form__cart-item .product-name .accessory-image {
+    margin-left: 15px;
 }
 .woocommerce-cart-form__cart-item .product-name .attribute-thumbnail{
     border: 1px solid #ccc;
+}
+.woocommerce-cart-form__cart-item .label-quantity{
+    margin-right: 15px;
 }
 .woocommerce-cart-form__cart-item .product-subtotal {
     margin-left: auto;
@@ -574,7 +595,11 @@ body.fl-theme-builder-footer #vpc-qty-container input[type="button"] {
     display: block;
 }
 .woocommerce-cart-form__cart-item .quantity {
-    margin-right: 10px;
+    float: right;
+    margin: 10px 0;
+}
+.woocommerce-cart-form__cart-item .product-total {
+    display: flex;
 }
 .woocommerce-cart-form__cart-item .product-total label {
     font-weight: bold;

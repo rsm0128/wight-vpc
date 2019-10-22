@@ -147,3 +147,5 @@ add_filter( 'wc_add_to_cart_message', 'custom_wc_add_to_cart_message', 10, 2 );
 
  <?php
  }
+
+ add_filter( 'woocommerce_cart_item_permalink', '__return_null' );

@@ -40,13 +40,24 @@ do_action( 'woocommerce_before_cart' ); ?>
 				$config = get_product_config($product_id);
 				$recap = get_recap_from_cart_item($cart_item);
 				$filtered_recap = apply_filters("vpc_filter_recap", $recap, $config, true);
-				$base_img_src = o_get_proper_image_url( VPC_Public::extract_option_field_from_config($filtered_recap['BaseTab'], 'BaseTab', $config->settings, "image") );
-				$cover_img_src = o_get_proper_image_url( VPC_Public::extract_option_field_from_config($filtered_recap['Pattern'], 'Pattern', $config->settings, "icon") );
-				$shade_img_src = o_get_proper_image_url( VPC_Public::extract_option_field_from_config($filtered_recap['ShadeSub'], 'ShadeSub', $config->settings, "image") );
-				$img_src = o_get_proper_image_url( VPC_Public::extract_option_field_from_config($filtered_recap['ShadeSub'], 'ShadeSub', $config->settings, "image") );
+				if ( array_key_exists('BaseTab', $filtered_recap) ) {
+					$base_img_src = o_get_proper_image_url( VPC_Public::extract_option_field_from_config($filtered_recap['BaseTab'], 'BaseTab', $config->settings, "image") );
+				} else {
+					$base_img_src = '';
+				}
+				if ( array_key_exists('Pattern', $filtered_recap) ) {
+					$cover_img_src = o_get_proper_image_url( VPC_Public::extract_option_field_from_config($filtered_recap['Pattern'], 'Pattern', $config->settings, "icon") );
+				} else {
+					$cover_img_src = '';
+				}
+				if ( array_key_exists('ShadeSub', $filtered_recap) ) {
+					$shade_img_src = o_get_proper_image_url( VPC_Public::extract_option_field_from_config($filtered_recap['ShadeSub'], 'ShadeSub', $config->settings, "image") );
+				} else {
+					$shade_img_src = '';
+				}
 				?>
 				<div class="woocommerce-cart-form__cart-item rsm-flex-wrapper <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-					<div class="product-thumbnail rsm-flex-half">
+					<div class="product-thumbnail">
 						<div class="product-thumbnail-wrapper">
 							<?php
 								$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
@@ -58,7 +69,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 								}
 							?>
 						</div>
-						<div class="product-action-wrapper rsm-flex-wrapper">
+						<div class="product-action-wrapper">
 							<?php
 								echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									'woocommerce_cart_item_remove_link',
@@ -75,7 +86,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							<a class="edit-lamp" href="<?php echo $edit_url ?>">EDIT LAMP</a>
 						</div>
 					</div>
-					<div class="product-name rsm-flex-half" data-title="Product">
+					<div class="product-name" data-title="Product">
 						<div class="rsm-flex-wrapper">
 							<div class="rsm-flex-half base-image">
 								<div class="attribute-title">BASE</div>
@@ -93,7 +104,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 							</div>
 							<div class="rsm-flex-half accessory-image">
 								<div class="attribute-title">ACCESSORY</div>
-								<!-- <div class="attribute-thumbnail"><img src="<?php echo $img_src ?>"></div> -->
 							</div>
 						</div>
 						<div class="product-quantity" data-title="Quantity">
@@ -119,7 +129,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 								?>
 							</div>
 						</div>
-						<div class="rsm-flex-wrapper product-total">
+						<div class="product-total">
 							<div class="product-price" data-title="Price">
 								<label>PRICE</label>
 								<?php

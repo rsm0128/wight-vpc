@@ -28,7 +28,7 @@ if ( $max_value && $min_value === $max_value ) {
 	$label = ! empty( $args['product_name'] ) ? sprintf( __( '%s quantity', 'woocommerce' ), wp_strip_all_tags( $args['product_name'] ) ) : __( 'Quantity', 'woocommerce' );
 	?>
 	<div class="quantity">
-		<label class="" for="<?php echo esc_attr( $input_id ); ?>">quantity</label>
+		<label class="label-quantity" for="<?php echo esc_attr( $input_id ); ?>">quantity</label>
 		<input
 			type="number"
 			id="<?php echo esc_attr( $input_id ); ?>"
