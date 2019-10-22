@@ -21,6 +21,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
+	<?php do_action( 'woocommerce_before_cart_contents' ); ?>
+	<?php do_action( 'woocommerce_cart_contents' ); ?>
 	<div class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
 	<?php
 		global $woocommerce,$vpc_settings;
@@ -149,14 +151,26 @@ do_action( 'woocommerce_before_cart' ); ?>
 			}
 		} ?>
 	</div>
+	<div class="coupon_wrapper">
+		<?php if ( wc_coupons_enabled() ) { ?>
+			<div class="coupon">
+				<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'enter coupon code', 'woocommerce' ); ?>" />
+			</div>
+			<div class="coupon_action">
+				<button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?></button>
+				<?php do_action( 'woocommerce_cart_coupon' ); ?>
+				<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+			</div>
+		<?php } else { ?>
+			<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+		<?php } ?>
 
-	<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
-		<tbody>
+		<?php do_action( 'woocommerce_cart_actions' ); ?>
 
-			<?php do_action( 'woocommerce_before_cart_contents' ); ?>
-			<?php do_action( 'woocommerce_after_cart_contents' ); ?>
-		</tbody>
-	</table>
+		<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
+	</div>
+
+	<?php do_action( 'woocommerce_after_cart_contents' ); ?>
 	<?php do_action( 'woocommerce_after_cart_table' ); ?>
 </form>
 
