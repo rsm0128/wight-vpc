@@ -40,7 +40,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 				$config = get_product_config($product_id);
 				$recap = get_recap_from_cart_item($cart_item);
 				$filtered_recap = apply_filters("vpc_filter_recap", $recap, $config, true);
-				var_dump($filtered_recap);
 				$base_img_src = o_get_proper_image_url( VPC_Public::extract_option_field_from_config($filtered_recap['BaseTab'], 'BaseTab', $config->settings, "image") );
 				$cover_img_src = o_get_proper_image_url( VPC_Public::extract_option_field_from_config($filtered_recap['Pattern'], 'Pattern', $config->settings, "icon") );
 				$shade_img_src = o_get_proper_image_url( VPC_Public::extract_option_field_from_config($filtered_recap['ShadeSub'], 'ShadeSub', $config->settings, "image") );
