@@ -45,7 +45,7 @@ jQuery(document).ready(function() {
 		jQuery('.vpc-tab-header.Base').removeClass('label-active');
 		jQuery('.vpc-tab-header.Color').addClass('label-active');
 
-		jQuery('.vpc-component.Pattern .vpc-options .vpc-group').scrollTop(0);
+		// jQuery('.vpc-component.Pattern .vpc-options .vpc-group').scrollTop(0);
 		jQuery('.vpc-component.Color').removeClass('rsm-initial');
 	});
 
@@ -89,29 +89,29 @@ jQuery(document).ready(function() {
 			state = 'yes';
 			jQuery('body .Pattern .vpc-group').mouseenter(function(){ MOUSE_OVER=true; });
 			jQuery('body .Pattern .vpc-group').mouseleave(function(){ MOUSE_OVER=false; });
+		}
+	});
 
-			jQuery('body .vpc-group').on('wheel', function (event){
-				var curr_scroll = jQuery(this).scrollTop();
+	jQuery('body').on('wheel', '.vpc-group', function (event) {
+		var curr_scroll = jQuery(this).scrollTop();
 
-				// var delta = e.originalEvent.wheelDelta;
-				if(scroll_state == 'yes'){
-					if (event.originalEvent.deltaY < 0) {
-					// if(delta > 0){
-						//go up
-						scroll_state = 'no';
-						jQuery(this).animate({ scrollTop: curr_scroll - 300 }, 600, function(){
-							scroll_state = 'yes';
-						});
-					} else {
-						//go down
-						scroll_state = 'no';
-						jQuery(this).animate({ scrollTop: curr_scroll + 300 }, 600, function(){
-							scroll_state = 'yes';
-						});
-					}
-				}else {
-				}
-			});
+		// var delta = e.originalEvent.wheelDelta;
+		if (scroll_state == 'yes') {
+			if (event.originalEvent.deltaY < 0) {
+				// if(delta > 0){
+				//go up
+				scroll_state = 'no';
+				jQuery(this).animate({ scrollTop: curr_scroll - 300 }, 600, function () {
+					scroll_state = 'yes';
+				});
+			} else {
+				//go down
+				scroll_state = 'no';
+				jQuery(this).animate({ scrollTop: curr_scroll + 300 }, 600, function () {
+					scroll_state = 'yes';
+				});
+			}
+		} else {
 		}
 	});
 
@@ -147,16 +147,23 @@ jQuery(document).ready(function() {
 
 	// scroll action to pattern
 	jQuery( "body" ).on( "click", '.Pattern .vpc-group .vpc-single-option-wrap label', function(){
-		var el_index = jQuery(this).closest('.vpc-group').find('label').index(jQuery(this));
-		if(el_index > 0){
-			var el_height = 100;
+
+	});
+
+	jQuery("body").on("click", '.ShadeSub .vpc-group .vpc-single-option-wrap label', function(){
+		moveToCenter( jQuery(this), 80 );
+	});
+
+	function moveToCenter(obj, el_height) {
+		var el_index = obj.closest('.vpc-group').find('label').index(obj);
+		if (el_index > 0) {
 			var curr_scroll = el_height * (el_index - 1);
 
-			jQuery(this).parents('.vpc-group').animate({ scrollTop: curr_scroll }, 600 );
+			obj.parents('.vpc-group').animate({ scrollTop: curr_scroll }, 600);
 		} else {
-			jQuery(this).parents('.vpc-group').animate({ scrollTop: 0 }, 600);
+			obj.parents('.vpc-group').animate({ scrollTop: 0 }, 600);
 		}
-	});
+	}
 
 	jQuery('body').on('click', '.sfl-form-close', function(){
 		jQuery('.sfl-form-wrapper').hide();
