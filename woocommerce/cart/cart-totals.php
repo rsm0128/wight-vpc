@@ -18,11 +18,15 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<div class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
+<div class="continue-shopping-block">
+	<div class="continue-shopping-link">
 	<?php
 		$shop_page_url = empty(RSM_BUILDER_PAGE_URL) ? get_permalink( wc_get_page_id( 'shop' ) ) : RSM_BUILDER_PAGE_URL;
-		echo sprintf( '<a href="%s" class="continue-shopping-link">CONTINUE SHOPPING</a>', $shop_page_url );
+		echo sprintf( '<a href="%s">CONTINUE</a> SHOPPING', $shop_page_url );
 	?>
+	</div>
+</div>
+<div class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
 
 	<h2><?php esc_html_e( 'Cart totals', 'woocommerce' ); ?></h2>

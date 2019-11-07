@@ -44,18 +44,24 @@ do_action( 'woocommerce_before_cart' ); ?>
 				$filtered_recap = apply_filters("vpc_filter_recap", $recap, $config, true);
 				if ( array_key_exists('BaseTab', $filtered_recap) ) {
 					$base_img_src = o_get_proper_image_url( VPC_Public::extract_option_field_from_config($filtered_recap['BaseTab'], 'BaseTab', $config->settings, "image") );
+					$base_price = VPC_Public::extract_option_field_from_config($filtered_recap['BaseTab'], 'BaseTab', $config->settings, "price");
 				} else {
 					$base_img_src = '';
+					$base_price = 0;
 				}
 				if ( array_key_exists('Pattern', $filtered_recap) ) {
 					$cover_img_src = o_get_proper_image_url( VPC_Public::extract_option_field_from_config($filtered_recap['Pattern'], 'Pattern', $config->settings, "icon") );
+					$cover_price = VPC_Public::extract_option_field_from_config($filtered_recap['Pattern'], 'Pattern', $config->settings, "price");
 				} else {
 					$cover_img_src = '';
+					$cover_price = 0;
 				}
 				if ( array_key_exists('ShadeSub', $filtered_recap) ) {
 					$shade_img_src = o_get_proper_image_url( VPC_Public::extract_option_field_from_config($filtered_recap['ShadeSub'], 'ShadeSub', $config->settings, "image") );
+					$shade_price = VPC_Public::extract_option_field_from_config($filtered_recap['ShadeSub'], 'ShadeSub', $config->settings, "price");
 				} else {
 					$shade_img_src = '';
+					$shade_price = 0;
 				}
 				?>
 				<div class="woocommerce-cart-form__cart-item rsm-flex-wrapper <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
@@ -93,19 +99,19 @@ do_action( 'woocommerce_before_cart' ); ?>
 							<div class="rsm-flex-half base-image">
 								<div class="attribute-title">BASE</div>
 								<div class="attribute-thumbnail"><img src="<?php echo $base_img_src ?>"></div>
+								<div class="attribute-price"><?php echo wc_price($base_price) ?></div>
 							</div>
 							<div class="rsm-flex-half cover-image">
 								<div class="attribute-title">COVER</div>
 								<div class="attribute-thumbnail"><img src="<?php echo $cover_img_src ?>"></div>
+								<div class="attribute-price"><?php echo wc_price($cover_price) ?></div>
 							</div>
 						</div>
 						<div class="rsm-flex-wrapper">
 							<div class="rsm-flex-half shade-image">
 								<div class="attribute-title">SHADE</div>
 								<div class="attribute-thumbnail"><img src="<?php echo $shade_img_src ?>"></div>
-							</div>
-							<div class="rsm-flex-half accessory-image">
-								<div class="attribute-title">ACCESSORY</div>
+								<div class="attribute-price"><?php echo wc_price($shade_price) ?></div>
 							</div>
 						</div>
 						<div class="product-quantity" data-title="Quantity">
