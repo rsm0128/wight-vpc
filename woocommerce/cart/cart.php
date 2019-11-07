@@ -209,7 +209,7 @@ defined( 'ABSPATH' ) || exit;
 	font-size: 36px !important;
 }
 .wpexperts-page .entry-content {
-	padding-top: 0 !important;
+	padding: 0 !important;
 }
 </style>
 
