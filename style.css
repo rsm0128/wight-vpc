@@ -412,10 +412,20 @@ header.entry-header.ast-no-thumbnail.ast-no-meta {
         </div>
     </div>*/
 
+.vpc-cart-config-image,
+.woocommerce-cart-form__cart-item .product-action-wrapper {
+	max-width: 475px !important;
+}
 
+.woocommerce-cart-form__cart-item .vpc-cart-config-image,
+.woocommerce-cart-form__cart-item .product-action-wrapper {
+	margin-left: 50px !important;
+}
 
-
-
+.woocommerce.quantity.qty {
+	min-height: none !important;
+	height: 15px !important;
+}
 
 
 @media screen and (max-width: 960px) {
