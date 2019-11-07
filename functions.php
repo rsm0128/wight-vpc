@@ -71,15 +71,6 @@ function rsm_template_redirect() {
 }
 add_action( 'template_redirect', 'rsm_template_redirect' );
 
-add_action( 'woocommerce_before_cart_table', 'rsm_woo_add_continue_shopping_button_to_cart' );
-function rsm_woo_add_continue_shopping_button_to_cart() {
- $shop_page_url = empty(RSM_BUILDER_PAGE_URL) ? get_permalink( wc_get_page_id( 'shop' ) ) : RSM_BUILDER_PAGE_URL;
-
- echo '<div class="woocommerce-message">';
- echo ' <a href="'.$shop_page_url.'" class="button">Continue Shopping →</a> Would you like to build a new lamp?';
- echo '</div>';
-}
-
 add_filter( 'wc_add_to_cart_message', 'custom_wc_add_to_cart_message', 10, 2 );
 
  function custom_wc_add_to_cart_message( $message, $product_id ) {
@@ -149,3 +140,5 @@ add_filter( 'wc_add_to_cart_message', 'custom_wc_add_to_cart_message', 10, 2 );
  }
 
  add_filter( 'woocommerce_cart_item_permalink', '__return_null' );
+
+ // /public_html/projects/wight/wp-content/themes/wight-child
