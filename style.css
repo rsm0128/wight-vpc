@@ -156,10 +156,9 @@ header.entry-header.ast-no-thumbnail.ast-no-meta {
 }
 
 .vpc-success {
-
 	float: right !important;
 	margin-right: 28%;
-	margin-top: -92px;
+	/* margin-top: -92px; */
 	background-color: transparent !important;
 	text-transform: uppercase !important;
 	font-size: 0,75em;
