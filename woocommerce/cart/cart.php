@@ -16,8 +16,19 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+?>
+<?php if ( ! is_user_logged_in() ) : ?>
+	<div class="login-signup-block">
+		<div class="login-block">
+			<?php echo sprintf( '<a href="%s">Login</a> to your account', wp_login_url() ); ?>
+		</div>
+		<div class="signup-block">
+		<?php echo sprintf( '<a href="%s">Create</a> an account', wp_registration_url() ); ?>
+		</div>
+	</div>
+<?php endif ?>
 
-do_action( 'woocommerce_before_cart' ); ?>
+<?php do_action( 'woocommerce_before_cart' ); ?>
 
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<!-- <?php do_action( 'woocommerce_before_cart_table' ); ?> -->
@@ -193,5 +204,13 @@ do_action( 'woocommerce_before_cart' ); ?>
 		do_action( 'woocommerce_cart_collaterals' );
 	?>
 </div>
+<style>
+.entry-header .entry-title {
+	font-size: 36px !important;
+}
+.wpexperts-page .entry-content {
+	padding-top: 0 !important;
+}
+</style>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
