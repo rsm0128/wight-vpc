@@ -315,4 +315,11 @@ function rsmInitCongurator() {
 
 	// add loader
 	jQuery("#vpc-container").append("<div class='loader'><img src='" + myPluginVars.pluginUrl + "loader.gif'></div>");
+
+	jQuery(document).ajaxStart(function(){
+		jQuery('#vpc-ajax-loader-container').show();
+	});
+	jQuery(document).ajaxStop(function () {
+		jQuery('#vpc-ajax-loader-container').hide();
+	});
 }
