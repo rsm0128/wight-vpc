@@ -45,11 +45,6 @@ img {
 	text-align: center;
 }
 
-.wpexperts-page .main-header-bar-wrap,
-.wpexperts-page footer {
-	display: none;
-}
-
 #vpc-components .vpc-component {
 	border-right: 0.5px solid rgba(0,0,0,0.5) !important;
 }
