@@ -45,6 +45,11 @@ img {
 	text-align: center;
 }
 
+.page-id-2 .main-header-bar-wrap,
+.page-id-2 footer {
+	display: none;
+}
+
 #vpc-components .vpc-component {
 	border-right: 0.5px solid rgba(0,0,0,0.5) !important;
 }

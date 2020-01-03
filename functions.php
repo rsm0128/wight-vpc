@@ -135,10 +135,7 @@ add_filter( 'wc_add_to_cart_message', 'custom_wc_add_to_cart_message', 10, 2 );
 
           </div>
 		</div>
-		<style>
-		/* remove header and footer */
-		.wpexperts-page .main-header-bar-wrap, .wpexperts-page footer { display: none; }
-		</style>
+
  <?php
  }
 
